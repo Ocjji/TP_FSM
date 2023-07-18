@@ -11,23 +11,25 @@ import Logout from './pages/login/Logout';
 // import Join from './pages/login/Join';
 import Log from './pages/login/Log';
 import JoinForm from './pages/login/JoinForm';
+import GoodsLayout from "./pages/store/GoodsLayout";
 const App = () => {
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Layout/>}>
-            <Route index element={<Home/>}/>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
 
-            <Route path='/news' element={<NewsLayout/>}>
-              <Route index element={<News/>}/>
-              <Route path=':newsID' element={<NewsDetail/>}/>
+            <Route path='/news' element={<NewsLayout />}>
+              <Route index element={<News />} />
+              <Route path=':newsID' element={<NewsDetail />} />
             </Route>
-            <Route path='/game_schedule' element={<GameSchedule/>}/>
-            <Route path='/login' element={<Log/>}/>
-            <Route path='/logout' element={<Logout/>}/>
-            <Route path='/join' element={<JoinForm/>}/>
+            <Route path='/game_schedule' element={<GameSchedule />} />
+            <Route path='/login' element={<Log />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path='/join' element={<JoinForm />} />
+            <Route path='/store' element={<GoodsLayout />} />
           </Route>
         </Routes>
       </BrowserRouter>
