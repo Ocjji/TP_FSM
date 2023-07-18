@@ -166,11 +166,23 @@ export const LoginWrap = styled.div`
                 }
             }
         }
-        .idFindPopup{
 
-        }
-        .pwFindPopup{
+`
 
+export const JoinWrap = styled.div`
+    h2{
+        ${h2}
+        color: #000;
+    }
+    .inner{
+        ${inner}
+    }
+    h4{
+        font-size: 25px; 
+        font-weight: 600;
+        padding: 30px 0px;
+        span{
+            
         }
-    
+    }
 `

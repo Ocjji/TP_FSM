@@ -30,9 +30,10 @@ export const HomeWrap = styled.div`
         ${bg}
         background-image: url('../../public/images/visual5.jpg');
         height: 900px;
+        position: relative;
         p{
             position: absolute;
-            bottom: 180px;
+            bottom: 130px;
             right: 300px;
             a{
                 background: rgba(92, 133, 85,0.6);
