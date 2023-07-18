@@ -55,7 +55,7 @@ export const GoodsPopupStyle = styled.div`
 `;
 
 export const GoodsNavStyle = styled.nav`
-    margin-top: 180px;
+    margin-top: 140px;
     ul {
         width: 300px;
         li {
@@ -84,7 +84,7 @@ export const GoodsNavStyle = styled.nav`
     }
 `;
 export const CategoryInfoStyle = styled.div`
-    margin-top: 140px;
+    margin-top: 100px;
     margin-bottom: 20px;
     &.categoryInfo {
         display: flex;
