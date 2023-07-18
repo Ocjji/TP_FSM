@@ -6,7 +6,7 @@ export const GameScheduleWrap = styled.div`
     h2{
         ${h2}
         ${bg}
-        background-image: url('../../public/images/visual3.png');
+        background-image: url('../../public/images/visual/visual3.png');
         
     }
     .inner{
