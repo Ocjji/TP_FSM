@@ -55,7 +55,7 @@ export const GoodsPopupStyle = styled.div`
 `;
 
 export const GoodsNavStyle = styled.nav`
-    margin-top: 130px;
+    margin-top: 180px;
     ul {
         width: 300px;
         li {
