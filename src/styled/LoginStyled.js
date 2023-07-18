@@ -180,9 +180,142 @@ export const JoinWrap = styled.div`
     h4{
         font-size: 25px; 
         font-weight: 600;
-        padding: 30px 0px;
+        padding: 60px 0px 30px;
+        position: relative;
         span{
+            position: absolute;
+            bottom: 30px;
+            right: 0px;
+            font-size: 14px;
+            font-weight: 400;
             
         }
     }
+    b{
+        color:red;
+        padding-right: 10px;
+    }
+    form{
+
+        table{
+            .w1{width: 200px;}
+            .w2{width:1200px;}
+            .w700{width:700px;}
+            .w400{width:400px;}
+            .w230{width:230px;}
+            .w200{width:150px;}
+            .w500{width:500px;}
+            tr{
+                &:first-child{
+                    border-top: 1px solid #333;
+                }
+                border-bottom: 1px solid #ccc;
+                td{
+                    padding: 30px 20px;
+                    input{
+                        padding: 15px;
+                    }
+                    /* input[type=radio]{
+                        padding: 100px;
+                    } */
+                    button, select{
+                        padding: 15px;
+                        vertical-align: middle;
+                    }
+                    &:last-child{
+                        label{
+                        margin-right: 20px;
+                        margin-left: 10px;
+                        }
+
+                    }
+                    &.telSelect{
+                        select{
+                            width: 100px;
+                        }
+                        button{
+                            margin-left: 20px;
+                            width: 195px;
+                        }
+                    }
+                    &.birthSelect{
+                        select{
+                            margin-right: 10px;
+                        }
+                        label{
+                            display: inline-block;
+                            margin-top: 15px;
+                        }
+                    }
+                    &.addInput{
+                        input{
+                            margin-right: 20px;
+                            margin-bottom: 15px;
+                            &.addrBtn{
+                                padding: 14px 30px;
+                                vertical-align: bottom;
+                            }
+
+                        }
+                    }
+                    .emailSelect{
+                        width: 200px;
+                        margin-left: 20px;
+                    }
+                    span{
+                        padding: 0px 10px;
+                    }
+                    &.expiration{
+                        p{
+                            text-indent: 10px;
+                            margin-top: 10px;
+                        }
+    
+                    }
+                }
+            }
+        }
+        .clasuseSelect{
+            p{
+                &:first-child{
+                    border-top: 1px solid #333;
+                    
+                }
+                padding: 20px;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                input{
+                    margin-right: 10px;
+                }
+                span{
+                    position: absolute;
+                    right: 20px;top: 20px;
+                    cursor: pointer;
+                }
+                div{
+                    height: 0; overflow: auto;
+                    white-space: pre-line;
+                    transition: 0.5s;
+                    &.on{
+                    margin: 20px 0px;
+    
+                        border: 1px solid #ccc;
+                        padding: 10px;
+                        height: 150px;
+                   }
+                }
+            }
+        }
+        .submitBtn{
+            margin-top: 50px;
+            text-align: center;
+            button{
+                width: 300px;height: 50px;
+                color: #fff;
+                background: #333;
+            }
+        }
+    }
+
+
 `
