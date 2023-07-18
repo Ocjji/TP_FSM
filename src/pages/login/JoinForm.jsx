@@ -68,7 +68,7 @@ const JoinForm = () => {
         }).open();
     }
 
-    //약관동의
+    //약관 체크박스
     const [clauseData, setClauseData] = useState(clause)
     
     const changeCheckbox=e=>{
@@ -79,9 +79,26 @@ const JoinForm = () => {
             setClauseData(clauseData.map(item=>item.name===name?{...item, isChk:!item.isChk}:item))
         }
     }
-    const clasueShow =(id)=>{
-        setClauseData(clauseData.map(item=>item.id===id?{...item, isShow:true}:{...item, isShow:false}))
-    }    
+    //약관보기
+    const clasueShow =(id, isShow)=>{
+        if(isShow){
+            setClauseData(clauseData.map(item=>({...item, isShow:false})))
+
+        }else{
+
+            setClauseData(clauseData.map(item=>item.id===id?{...item, isShow:true}:{...item, isShow:false}))
+        }
+    } 
+    //이메일
+    const [emailAddr, setEmailAddr] = useState('')
+    const emailInput = e=>{
+        const {value} = e.target
+        if(value !== 'type'){
+            setEmailAddr(value)
+        }else{
+            setEmailAddr('')
+        }
+    }
     return (
         <JoinWrap>
             <h2>회원가입</h2>
@@ -110,26 +127,26 @@ const JoinForm = () => {
                             </tr>
                             <tr>
                                 <td><label htmlFor='userName'><b>*</b>이름</label></td>
-                                <td><input type='text' id='userName' placeholder='이름' required className='w700'/></td>
+                                <td><input type='text' id='userName'  required className='w700'/></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userEmail"><b>*</b>이메일</label></td>
                                 <td>
-                                    <input type="email" id="userEmail" required className="w500" />
-                                    @
-                                    <input type="email" className="w200" />
-                                    <select>
-                                        <option>직접입력</option>
-                                        <option>naver.com</option>
-                                        <option>gmail.com</option>
-                                        <option>hanmail.het</option>
+                                    <input type="email" id="userEmail" required className="w400" />
+                                    <span>@</span>
+                                    <input type="email" className="w230" value={emailAddr} onChange={emailInput}/>
+                                    <select  onChange={emailInput} className='emailSelect'>
+                                        <option value='type'>직접입력</option>
+                                        <option value='naver.com'>naver.com</option>
+                                        <option value='gmail.com'>gmail.com</option>
+                                        <option value='hanmail.net'>hanmail.net</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userTel"><b>*</b>휴대폰번호</label> </td>
-                                <td>
-                                    <select name="" id="userTel" title='선택' className='w200'>
+                                <td className='telSelect'>
+                                    <select name="" id="userTel" title='선택'>
                                         <option value="">010</option>
                                         <option value="">011</option>
                                         <option value="">016</option>
@@ -137,10 +154,10 @@ const JoinForm = () => {
                                         <option value="">018</option>
                                         <option value="">019</option>
                                     </select>
-                                    -
-                                    <input type="text" placeholder='휴대전화번호' required className='w200'/>
-                                    -
-                                    <input type="text" placeholder='휴대전화번호' required className='w200'/>
+                                    <span>-</span>
+                                    <input type="text" required className='w200'/>
+                                    <span>-</span>
+                                    <input type="text" required className='w200'/>
                                     <button type='button'>본인인증</button>    
                                 </td>
                             </tr>
@@ -154,18 +171,18 @@ const JoinForm = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <td><label htmlFor="userDate">생년월일</label> </td>
-                                <td>
+                                <td><label htmlFor="userBirth">생년월일</label> </td>
+                                <td className='birthSelect'>
                                     <p>
-                                        <select name="" id="userDate" className='w30p'>
+                                        <select name="" id="userBirth" >
                                             <option value="">년도</option>
                                             {birthYear.map(item=><option key={item}> {item}</option>)}
                                         </select>
-                                        <select name="" className='w30p'>
+                                        <select name="" >
                                             <option value="">월</option>
                                             {birthMonth.map(item=><option key={item}> {item}</option>)}
                                         </select>
-                                        <select name="" className='30p'>
+                                        <select name="" >
                                             <option value="">일</option>
                                             {birthDate.map(item=><option key={item}> {item}</option>)}
                                         </select>
@@ -181,55 +198,60 @@ const JoinForm = () => {
                             </tr>
                             <tr>
                                 <td><label htmlFor="userAddr">주소</label></td>
-                                <td>
-                                <input type="text" id="sample4_postcode" placeholder="우편번호"/>
-                                <input type="button" onClick={sample4_execDaumPostcode} value="우편번호 찾기"/><br/>
-                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소"/>
-                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소"/>
-                                <span id="guide" style={{color:"#999", display:"none"}}></span>
-                                <input type="text" id="sample4_detailAddress" placeholder="상세주소"/>
-                                <input type="text" id="sample4_extraAddress" placeholder="참고항목"/>
-                                    </td>
+                                <td className='addInput'>
+                                    <input type="text" id="sample4_postcode" placeholder="우편번호" className='w200'/>
+                                    <input type="button" onClick={sample4_execDaumPostcode} value="우편번호 찾기" className='addrBtn'/><br/>
+                                    <input type="text" id="sample4_roadAddress" placeholder="도로명주소" className='w400'/>
+                                    <input type="text" id="sample4_jibunAddress" placeholder="지번주소" className='w500'/>
+                                    <span id="guide" style={{color:"#999", display:"none"}}></span>
+                                    <input type="text" id="sample4_detailAddress" placeholder="상세주소" className='w400'/>
+                                    <input type="text" id="sample4_extraAddress" placeholder="참고항목" className='w500'/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>개인정보 유효기간</td>
-                                <td>
+                                <td className='expiration'>
                                     <input type="radio" name='personalInfo' id='forWithdraw'/>
                                     <label htmlFor="forWithdraw">탈퇴시까지</label>
                                     <input type="radio" name='personalInfo' id='forYear' />
                                     <label htmlFor="forYear">1년</label>
-                                    <p>*개인정보 유효기간 경과이후 파기 또는 분리저장, 관리합니다.</p>
+                                    <p>* 개인정보 유효기간 경과이후 파기 또는 분리저장, 관리합니다.</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <h4>약관동의</h4>
-                    <div className='clasuseAll'>
-                        <input type="checkbox" name='all' onChange={changeCheckbox} checked={clauseData.filter(item=>item.isChk===false).length<1}/>
-                        <label htmlFor="">이용약관에 모두 동의합니다.</label>
-                    </div>
+                    {/* <div className='clasuseAll'>
+                    </div> */}
                     <div className='clasuseSelect'>
+                        <p>
+                            <input type="checkbox" name='all' onChange={changeCheckbox} checked={clauseData.filter(item=>item.isChk===false).length<1}/>
+                            <label htmlFor="">이용약관에 모두 동의합니다.</label>
+                        </p>
                         <p>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[0].isChk} name={clauseData[0].name}/>
                             <label htmlFor="">{clauseData[0].title}</label>
-                            <span onClick={()=>clasueShow(clauseData[0].id)}>약관보기</span>
-                            {/* <div className={clauseData[0].isShow?'on':''}>{clauseData[0].desc}</div>                         */}
+                            <span onClick={()=>clasueShow(clauseData[0].id, clauseData[0].isShow)}>약관보기</span>
+                            <div className={clauseData[0].isShow?'on':''}>{clauseData[0].desc}</div>                        
                         </p>
                         <p>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[1].isChk} name={clauseData[1].name}/>
                             <label htmlFor="">{clauseData[1].title}</label>
-                            <span onClick={()=>clasueShow(clauseData[1].id)}>약관보기</span>
-                            {/* <div className={clauseData[1].isShow?'on':''}>{clauseData[1].desc}</div>   */}
+                            <span onClick={()=>clasueShow(clauseData[1].id, clauseData[1].isShow)}>약관보기</span>
+                            <div className={clauseData[1].isShow?'on':''}>{clauseData[1].desc}</div>  
                         </p>
                         <p>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[2].isChk} name={clauseData[2].name}/>
                             <label htmlFor="">{clauseData[2].title}</label>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[3].isChk} name={clauseData[3].name}/>
                             <label htmlFor="">{clauseData[3].title}</label>
-                            <span onClick={()=>clasueShow(clauseData[2].id)}>약관보기</span>
-                            {/* <div className={clauseData[2].isShow?'on':''}>{clauseData[2].desc}</div>   */}
+                            <span onClick={()=>clasueShow(clauseData[2].id, clauseData[2].isShow)}>약관보기</span>
+                            <div className={clauseData[2].isShow?'on':''}>{clauseData[2].desc}</div>  
                         </p>
                     </div>
+                    <p className='submitBtn'>
+                        <button type='subnit'>회원가입</button>
+                    </p>
                 </form>
             </div>
           
