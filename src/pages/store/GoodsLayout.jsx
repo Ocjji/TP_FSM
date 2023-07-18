@@ -10,6 +10,7 @@ const GoodsLayout = () => {
     return (
         <GoodsWrap>
             {isGoodsPopup && <GoodsPopup />}
+            <h2></h2>
             <div className="inner">
                 <div className="goodslayout" style={{ display: "flex" }}>
                     <GoodsNav />

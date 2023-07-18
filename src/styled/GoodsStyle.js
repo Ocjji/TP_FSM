@@ -1,6 +1,14 @@
 import styled from 'styled-components';
+import { h2 } from './commonStyled';
+import { bg } from './HomeStyled';
 
 export const GoodsWrap = styled.div`
+    h2{
+        /* ${h2} */
+        ${bg}
+        background-image: url('../../public/images/visual/playstore.png');
+        height: 500px;
+    }
     .inner{
         width: 1400px;
         margin: auto;
