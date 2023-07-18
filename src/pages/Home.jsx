@@ -21,19 +21,19 @@ const Home = () => {
                     <ul>
                         <li><Link to={'/'}>
                             <div>
-                                <img src="./images/visual1.jpg" alt="" />
+                                <img src="./images/visual/visual1.jpg" alt="" />
                             </div>
                             <p><strong>All Players</strong><i className='xi-long-arrow-right'></i></p>
                             </Link></li>
                         <li><Link to={'/'}>
                             <div>
-                                <img src="./images/notice.png" alt="" />
+                                <img src="./images/visual/notice.png" alt="" />
                             </div>
                             <p><strong>Game Schedule</strong><i className='xi-long-arrow-right'></i></p>
                             </Link></li>
                         <li><Link to={'/'}>
                             <div>
-                                <img src="./images/visual7.png" alt="" />
+                                <img src="./images/visual/visual7.png" alt="" />
                             </div>
                             <p><strong>Notice</strong><i className='xi-long-arrow-right'></i></p>
                             </Link></li>

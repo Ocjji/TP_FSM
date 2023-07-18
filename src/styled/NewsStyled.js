@@ -7,7 +7,7 @@ export const NewsWrap = styled.div`
         h2{
             ${h2}
             ${bg}
-            background-image: url('../../public/images/visual7.png'); 
+            background-image: url('../../public/images/visual/visual7.png'); 
             background-color : #000;
             
         }
@@ -125,7 +125,7 @@ export const NewsDetailWrap = styled.div`
     
     .title{
         ${bg}
-        background-image: url('../../public/images/newsdetail.png');
+        background-image: url('../../public/images/visual/newsdetail.png');
         h3{
             width: 1200px;
             margin: auto;
