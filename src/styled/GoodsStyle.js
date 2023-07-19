@@ -19,6 +19,22 @@ export const GoodsWrap = styled.div`
 `;
 
 export const GoodsPopupStyle = styled.div`
+    .addPopup{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 48%;
+        transform:translateX(-50%);
+        text-align: center;
+        background-color: rgba(0,155,0,0.3);
+        h3{
+            color: tomato;
+            height: 200px;
+            line-height: 200px;
+            font-size: 40px;
+            font-weight: 700;
+        }
+    }
     &.goodsPopup {
         width: 100%;
         height: 100%;
@@ -75,7 +91,7 @@ export const GoodsPopupStyle = styled.div`
                 }
                 .delivery-option-etc{
                     border-top: 2px solid #000;
-                    border-bottom: 2px solid #000;
+                    
                     dl.delivery {
                         display: flex;
                         padding: 20px 0;
@@ -91,14 +107,43 @@ export const GoodsPopupStyle = styled.div`
                     }
                    
                 }
-                .totalPrice-amount{
-                    dl.amount{
+                .select-size {
+                    border-top: 1px solid #ddd;
+                    dl.size {
                         display: flex;
                         padding: 20px 0;
                         align-items:center;
-                        justify-content:space-between;
+                        color:#666;
                         dt{
-                            color:#666;
+                            padding-right: 100px;
+                        }
+                        dd{
+                            select{
+                                width: 150px;
+                                height: 40px;
+                                font-size: 16px;
+                                padding: 0 10px;
+                                background-color: #eee;
+                                option{
+
+                                }
+                            }
+                        }
+                    }
+                }
+                .totalPrice-amount{
+                    dl.amount{
+                        border-top: 1px solid #ddd;
+                        border-bottom: 2px solid #000;
+                        display: flex;
+                        padding: 10px 0;
+                        align-items:center;
+                        justify-content:space-between;
+                        height: 50px;
+                        dt{
+                            font-size: 20px;
+                            color:#000;
+                            font-weight: 500;
                         }
                         dd{                                   
                             button{
@@ -106,9 +151,9 @@ export const GoodsPopupStyle = styled.div`
                                 margin: 0;
                                 padding: 0;
                                 width: 30px;
-                                height: 50px;
+                                height: 40px;
                                 border: 1px solid #000;
-                                line-height: 50px;
+                                line-height: 40px;
                                 box-sizing: border-box;
                                 vertical-align:middle;                   
                             }
@@ -117,8 +162,8 @@ export const GoodsPopupStyle = styled.div`
                                 text-align: center;
                                 display: inline-block;
                                 width: 60px;
-                                height: 50px;
-                                line-height: 50px;
+                                height: 40px;
+                                line-height: 40px;
                                 border: 1px solid #000;
                                 box-sizing: border-box;
                                 vertical-align:middle;                   
@@ -148,6 +193,7 @@ export const GoodsPopupStyle = styled.div`
                         width: 48%;
                         border: none;
                         box-shadow:3px 3px 3px rgba(0,0,0,0.4);
+                        cursor: pointer;
                         span{
                             display: block;
                             transform: skew(20deg);
