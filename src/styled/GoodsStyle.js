@@ -31,6 +31,7 @@ export const GoodsPopupStyle = styled.div`
             background: #fff;            
         }
         .goodsDetail {
+            width: 100%;
             position: relative;
             padding: 50px;
             box-sizing: border-box;
@@ -44,12 +45,125 @@ export const GoodsPopupStyle = styled.div`
                 height: 30px;
             }
             .goodsLeftImg {
+                padding: 50px;
                 img{
                     width: 500px;
                     height: 500px;
                 }
             }
-            .goodsRightInfo {}
+            .goodsRightInfo {
+                width: 60%;
+                padding: 50px;
+                .brand-title-price {
+                    em,strong, span {
+                        display: block;
+                    }
+                    em {
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                    }
+                    strong{
+                        font-size: 20px;
+                    }
+                    p {
+                        margin: 40px 0;
+                        span {
+                            font-weight: 700;
+                            font-size: 24px;
+                        }
+                    }
+                }
+                .delivery-option-etc{
+                    border-top: 2px solid #000;
+                    border-bottom: 2px solid #000;
+                    dl.delivery {
+                        display: flex;
+                        padding: 20px 0;
+                        align-items:center;
+                        color:#666;
+                        dt{
+                            padding-right: 100px;
+                        }
+                        dd{}
+                    }
+                    dl.option {
+
+                    }
+                   
+                }
+                .totalPrice-amount{
+                    dl.amount{
+                        display: flex;
+                        padding: 20px 0;
+                        align-items:center;
+                        justify-content:space-between;
+                        dt{
+                            color:#666;
+                        }
+                        dd{                                   
+                            button{
+                                display: inline-block;
+                                margin: 0;
+                                padding: 0;
+                                width: 30px;
+                                height: 50px;
+                                border: 1px solid #000;
+                                line-height: 50px;
+                                box-sizing: border-box;
+                                vertical-align:middle;                   
+                            }
+                            span{
+                                background: #ddd;
+                                text-align: center;
+                                display: inline-block;
+                                width: 60px;
+                                height: 50px;
+                                line-height: 50px;
+                                border: 1px solid #000;
+                                box-sizing: border-box;
+                                vertical-align:middle;                   
+                            }
+
+                        }
+                    }
+                    dl.totalPrice {
+                        display: flex;
+                        padding: 20px 0;
+                        align-items:center;
+                        justify-content:space-between;
+                        dt{}
+                        dd{
+                            font-weight: 700;
+                            font-size: 24px;
+                            color:red;
+                        }
+                    }
+                }                
+                .btn-addBasket-addGoBasket {
+                    display: flex;
+                    justify-content:space-between;
+                    button {
+                        height: 55px;
+                        transform: skew(-20deg);
+                        width: 48%;
+                        border: none;
+                        box-shadow:3px 3px 3px rgba(0,0,0,0.4);
+                        span{
+                            display: block;
+                            transform: skew(20deg);
+                            font-size: 16px;
+                            font-weight: 600;
+                            color:#fff;
+                        }
+                    }
+                    .addBasket {
+                        background: #e6002d;
+                    }
+                    .addGoBasket {
+                        background: #001a58;
+                    }
+                }
+            }
         }
     }
 `;
@@ -139,7 +253,7 @@ export const GoodsItemStyle = styled.li`
             }
         }
         p {
-            font-weight: 700;
+            
             em {
                 display: inline-block;
                 margin: 10px 0;
@@ -152,6 +266,7 @@ export const GoodsItemStyle = styled.li`
                 line-height: 1.2;
             }
             span {
+                font-weight: 700;
                 font-size: 14px;
                 b {
                     font-size: 20px;
