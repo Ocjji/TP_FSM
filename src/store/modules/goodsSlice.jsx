@@ -11,6 +11,7 @@ const initialState = {
     goodsListView: goodsData,
     sortOption: "recent",
     currentCategory: "all",
+    cart: []
 };
 
 export const goodsSlice = createSlice({
@@ -63,8 +64,12 @@ export const goodsSlice = createSlice({
                     break;
             }
         },
+        onAddCart(state, action) {
+            state.cart = [...state.cart, action.payload];
+            console.log(state.cart);
+        },
     }
 })
 
-export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort } = goodsSlice.actions;
+export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort, onAddCart } = goodsSlice.actions;
 export default goodsSlice.reducer;
