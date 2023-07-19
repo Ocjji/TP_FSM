@@ -71,16 +71,18 @@ export const GameScheduleWrap = styled.div`
             text-align: center;
             font-size: 18px;
             margin-top:50px;
-            i{
+            i{ 
+                cursor: pointer;
                 vertical-align: middle;
             }
             span{
+                cursor: pointer;
                 display: inline-block;
                 margin: 5px;
                 padding: 1px 10px;
                 border-radius: 50%;
                 box-sizing: border-box;
-                &.on{
+                &.on,&:hover{
                     background: #333;
                     color: #fff;
                 }

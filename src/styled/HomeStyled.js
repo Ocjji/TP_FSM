@@ -1,11 +1,11 @@
-import {keyframes, styled} from 'styled-components'
+import { keyframes, styled } from 'styled-components'
 import { inner, mainColor, subColor } from './commonStyled'
 
-export const bg={
-    backgroundPosition: '0px 0px',
+export const bg = {
+    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    width:'100%'
+    width: '100%'
 }
 const arrow = keyframes`
     0%{transform:translateX(0px)}
