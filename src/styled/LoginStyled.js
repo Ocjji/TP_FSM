@@ -292,10 +292,11 @@ export const JoinWrap = styled.div`
                     right: 20px;top: 20px;
                     cursor: pointer;
                 }
-                div{
+                em{
+                    display: block;
                     height: 0; overflow: auto;
                     white-space: pre-line;
-                    transition: 0.5s;
+                    transition: 0.3s;
                     &.on{
                     margin: 20px 0px;
     

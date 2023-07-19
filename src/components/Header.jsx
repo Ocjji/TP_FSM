@@ -4,18 +4,22 @@ import { HeaderWrap } from './../styled/HomeStyled';
 import { AiOutlineGlobal } from 'react-icons/ai'
 import { BsCart3 } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
+import { useDispatch } from 'react-redux';
+import { resetCurrentPerPosts } from '../store/modules/newsSlice';
 const Header = () => {
-    const [headerFixed, setHeaderFixed] = useState(false)
+    // const [headerFixed, setHeaderFixed] = useState(false)
     // window.addEventListener('scroll',e=>{
     //         setHeaderFixed(window.scrollY>50)
     // })
+    const dispatch = useDispatch()
     const clickLink = () => {
         window.scrollTo({ top: 0 })
     }
 
     return (
         <HeaderWrap>
-            <div className={`header ${headerFixed ? 'on' : ''}`}>
+            {/* <div className={`header ${headerFixed ? 'on' : ''}`}> */}
+            <div className='header'>
                 <div className='inner'>
                     <h1><Link to={'/'} onClick={clickLink}><img src='https://via.placeholder.com/100x50' alt='풋볼스쿼드메이커' /></Link></h1>
                     <div className="top_menu">
@@ -29,7 +33,7 @@ const Header = () => {
                             <li><Link to={'/'} onClick={clickLink}>Squad Maker</Link></li>
                             <li><Link to={'/game_schedule'} onClick={clickLink}>Game Schedule</Link></li>
                             <li><Link to={'/'} onClick={clickLink}>Notice</Link></li>
-                            <li><Link to={'/news'} onClick={clickLink}>News</Link></li>
+                            <li><Link to={'/news'} onClick={()=>{clickLink(),dispatch(resetCurrentPerPosts())}}>News</Link></li>
                             <li><Link to={'/store'} onClick={clickLink}>Store</Link></li>
                         </ul>
                     </nav>
