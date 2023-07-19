@@ -11,12 +11,9 @@ const Footer = () => {
             <div className="inner">
                 <div className='links'>
                     <div className='terms'>
-                        {/* <span><Link to={'/'}>개인정보처리방침</Link></span>
+                        <span><Link to={'/'}>개인정보처리방침</Link></span>
                         <span><Link to={'/'}>이용약관</Link></span>
-                        <span><Link to={'/'}>마이페이지</Link></span> */}
-                        <span>개인정보처리방침</span>
-                        <span>이용약관</span>
-                        <span>마이페이지</span>
+                        {/* <span><Link to={'/login'}>마이페이지</Link></span> */}
                     </div>
                     <div className="sns">
                         <i><FaFacebookSquare/></i>

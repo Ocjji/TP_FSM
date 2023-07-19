@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { h2, inner, mainColor, subColor } from './commonStyled'
+import { button, buttonText, h2, inner, mainColor, subColor } from './commonStyled'
 import { bg } from './HomeStyled'
 
 
@@ -17,14 +17,21 @@ export const NewsWrap = styled.div`
             .topSearch{
                 display: flex;
                 justify-content: space-between;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+                b{
+                    font-weight: 700;
+                    font-size: 18px;
+                }
                 span{
                     display: block;
                     text-indent: 10px;
+                    padding-top: 10px;
                 }
                 form{
-                    margin-bottom: 30px;
                     input{
-                        border: 1px solid #333;
+                        border: 1px solid ${subColor};
                         padding: 10px 15px;
                         box-sizing: border-box;
                         height: 40px;
@@ -35,7 +42,7 @@ export const NewsWrap = styled.div`
                         height: 40px;
                         width: 50px;
                         border: none;
-                        background: #333;
+                        background:  ${subColor};
                         color: #fff;
                         margin-left: 10px;
                         font-size: 20px;
@@ -109,13 +116,14 @@ export const NewsWrap = styled.div`
                 text-align: center;
                 margin-top: 30px;
                 button{
-                    background: #333;
-                    width: 200px;
-                    height: 50px;
-                    color: #fff;
-                    font-size: 18px;
-                    cursor: pointer;
 
+                    ${button}
+                    width: 400px;
+                    background: ${subColor};
+                    span{
+                        ${buttonText}
+
+                    }
                 }
             }
         }

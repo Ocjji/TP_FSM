@@ -248,7 +248,7 @@ const JoinForm = () => {
                         </p>
                     </div>
                     <p className='submitBtn'>
-                        <button type='subnit'>회원가입</button>
+                        <button type='subnit'><span>회원가입</span></button>
                     </p>
                 </form>
             </div>

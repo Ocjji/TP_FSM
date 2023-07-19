@@ -8,10 +8,12 @@ import News from './pages/news/News';
 import NewsDetail from './pages/news/NewsDetail';
 import GameSchedule from './pages/gameSchedule/GameSchedule';
 import Logout from './pages/login/Logout';
-// import Join from './pages/login/Join';
 import Log from './pages/login/Log';
 import JoinForm from './pages/login/JoinForm';
 import GoodsLayout from "./pages/store/GoodsLayout";
+import NoticeLayout from './pages/notice/NoticeLayout';
+import Notice from './pages/notice/Notice';
+import NoticeDetail from './pages/notice/NoticeDetail';
 const App = () => {
   return (
     <>
@@ -20,16 +22,20 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-
+            <Route path='/notice' element={<NoticeLayout/>}>
+              <Route index element={<Notice/>}/>
+              <Route path=':noticeID' element={<NoticeDetail/>}/>
+            </Route>
             <Route path='/news' element={<NewsLayout />}>
               <Route index element={<News />} />
               <Route path=':newsID' element={<NewsDetail />} />
             </Route>
             <Route path='/game_schedule' element={<GameSchedule />} />
+            <Route path='/store' element={<GoodsLayout />} />
             <Route path='/login' element={<Log />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/join' element={<JoinForm />} />
-            <Route path='/store' element={<GoodsLayout />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>
