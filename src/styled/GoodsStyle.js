@@ -1,19 +1,15 @@
 import styled from 'styled-components';
-import { h2 } from './commonStyled';
+import { button, buttonText, inner, mainColor, subColor } from './commonStyled';
 import { bg } from './HomeStyled';
 
 export const GoodsWrap = styled.div`
     h2{
-        /* ${h2} */
         ${bg}
         background-image: url('../../public/images/visual/playstore.png');
         height: 500px;
     }
     .inner{
-        width: 1400px;
-        margin: auto;
-        box-sizing:border-box;
-        position: relative;
+        ${inner}
         padding-bottom: 100px;
     }
 `;
@@ -25,7 +21,7 @@ export const GoodsPopupStyle = styled.div`
         position: fixed;
         z-index:100;
         /* position: absolute; */
-        background: rgba(0,0,0,0.3);
+        background: rgba(0,0,0,0.5);
         /* background: #eee; */
         .inner {
             background: #fff;            
@@ -74,8 +70,8 @@ export const GoodsPopupStyle = styled.div`
                     }
                 }
                 .delivery-option-etc{
-                    border-top: 2px solid #000;
-                    border-bottom: 2px solid #000;
+                    border-top: 2px solid #333;
+                    border-bottom: 2px solid #333;
                     dl.delivery {
                         display: flex;
                         padding: 20px 0;
@@ -107,7 +103,7 @@ export const GoodsPopupStyle = styled.div`
                                 padding: 0;
                                 width: 30px;
                                 height: 50px;
-                                border: 1px solid #000;
+                                border: 1px solid #333;
                                 line-height: 50px;
                                 box-sizing: border-box;
                                 vertical-align:middle;                   
@@ -119,7 +115,7 @@ export const GoodsPopupStyle = styled.div`
                                 width: 60px;
                                 height: 50px;
                                 line-height: 50px;
-                                border: 1px solid #000;
+                                border: 1px solid #333;
                                 box-sizing: border-box;
                                 vertical-align:middle;                   
                             }
@@ -143,24 +139,16 @@ export const GoodsPopupStyle = styled.div`
                     display: flex;
                     justify-content:space-between;
                     button {
-                        height: 55px;
-                        transform: skew(-20deg);
-                        width: 48%;
-                        border: none;
-                        box-shadow:3px 3px 3px rgba(0,0,0,0.4);
+                        ${button}
                         span{
-                            display: block;
-                            transform: skew(20deg);
-                            font-size: 16px;
-                            font-weight: 600;
-                            color:#fff;
+                            ${buttonText}
                         }
                     }
                     .addBasket {
-                        background: #e6002d;
+                        background: ${mainColor};
                     }
                     .addGoBasket {
-                        background: #001a58;
+                        background: ${subColor};
                     }
                 }
             }
@@ -215,11 +203,9 @@ export const CategoryInfoStyle = styled.div`
             display: block;
             margin-right: 25px;
             width: 180px;
-            height: 30px;
-            font-size: 18px;
-            padding-left: 10px;
-            border: none;
-            background: #ddd;
+            font-size: 16px;
+            padding: 10px;
+            
             option{
 
             }
@@ -231,7 +217,7 @@ export const GoodsListStyle = styled.ul`
         width: 1100px;
         margin: auto;
         /* height: 1250px; */
-        /* border: 1px solid #000; */
+        /* border: 1px solid #333; */
         display: flex;
         /* justify-content:space-between; */
         flex-wrap: wrap;
@@ -240,7 +226,7 @@ export const GoodsListStyle = styled.ul`
 `;
 export const GoodsItemStyle = styled.li`
     &.goodsitem {
-        /* border: 1px solid #000; */
+        /* border: 1px solid #333; */
         cursor: pointer;
         width: 250px;
         height: 430px;
@@ -290,7 +276,7 @@ export const PagingStyle = styled.p`
             border-radius : 50%;
             margin-right: 10px;
             &:hover, &.on {
-                background: tomato;
+                background: ${subColor};
                 color:#fff;
             }
         }

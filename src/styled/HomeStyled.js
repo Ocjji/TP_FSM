@@ -2,7 +2,7 @@ import { keyframes, styled } from 'styled-components'
 import { inner, mainColor, subColor } from './commonStyled'
 
 export const bg = {
-    backgroundPosition: 'center',
+    backgroundPosition: 'center 0',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     width: '100%'
@@ -29,17 +29,19 @@ export const HomeWrap = styled.div`
         margin-top: 120px;
         ${bg}
         background-image: url('../../public/images/visual/visual5.jpg');
-        height: 900px;
-        position: relative;
-        p{
-            position: absolute;
-            bottom: 130px;
-            right: 300px;
-            a{
-                background: rgba(92, 133, 85,0.6);
-                i{
-                    animation: ${arrow} 0.7s infinite ease-in-out;
-
+        .inner{
+            ${inner}
+            height: 900px;
+            p{
+                position: absolute;
+                bottom: 130px;
+                right: 0px;
+                a{
+                    background: rgba(0, 26, 88,0.7);
+                    i{
+                        animation: ${arrow} 0.7s infinite ease-in-out;
+    
+                    }
                 }
             }
         }
@@ -67,10 +69,12 @@ export const HomeWrap = styled.div`
                         display: block;
                         width: 400px;
                         height: 450px;
+                        z-index: -10;
                     }
                     p{
                         color: ${subColor};
                         font-weight: 700;
+                        background: rgba(255,255,255,0.8);
                         strong{
                             color: ${subColor};
                         }
@@ -116,11 +120,8 @@ export const HomeWrap = styled.div`
                 &:nth-child(2) img{
                     transform: translate(-500px, -125px) scale(1.2);
                 }
-                &:nth-child(3) div{
-                        background: #000;
-                    img{
-                    transform: translate(-1300px, -45px) scale(0.8);
-                    }
+                &:nth-child(3) img{
+                        transform: translate(-700px, 0px);
                 }
             }    
         }
@@ -128,12 +129,12 @@ export const HomeWrap = styled.div`
     
     .visual4{
         ${inner}
-        margin-top: 50px;
-        margin-bottom: 30px;
+        margin-top: 100px;
+        margin-bottom: 0px;
         h3{
             font-size: 40px;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         p{
             text-align: center;
@@ -154,9 +155,10 @@ export const HomeWrap = styled.div`
                     box-sizing: border-box;
                     width: 21%;
                     margin-right: 5%;
-                    margin-bottom: 50px;
+                    margin-bottom: 60px;
+                    padding: 10px;
+                    box-shadow: 1px 1px 5px #999;
                     &:hover{
-                        box-shadow: 1px 1px 5px #999;
                         img{
                             transform: scale(1.2);
                         }
@@ -217,17 +219,25 @@ export const HomeWrap = styled.div`
         ${bg}
         width: 100%;
         background-image: url('../../public/images/visual/playstore.png');
-        height: 600px;
-        position: relative;
+        .inner{
+            ${inner}
+            height: 600px;
+        }
         p{
+            width: 500px;
+            height: 300px;
             position: absolute;
-            top: 260px;
-            left: 650px;
-            a{
+            top: 180px;
+            left: 50px;
+            box-sizing: border-box;
+            padding-left:350px;
+            padding-top: 70px;
+            cursor: pointer;
                 i{
+                    color: #fff;
+                    font-size: 70px;
                     animation: ${arrow} 0.7s infinite ease-in-out;
                 }
-            }
         }
     }
 `
@@ -280,8 +290,19 @@ export const HeaderWrap = styled.div`
                         }
                         a{
                             color: #fff;
+                            &.on{
+                                &::after{
+                                content: "";
+                                position: absolute;
+                                display: block;
+                                width: 100%;
+                                height: 1px;
+                                background: #fff;
+                                bottom: -6px;
+                                left: 0;
+                                transform: scaleX(1.1);
+                            }
                         }
-                        position: relative;
                         &::after{
                             content: "";
                             position: absolute;
@@ -298,6 +319,8 @@ export const HeaderWrap = styled.div`
                             transform: scaleX(1.1);
                             
                         }
+                        }
+                        position: relative;
                     }
                 }
             }
@@ -321,12 +344,16 @@ padding: 50px 0px;
         margin-bottom: 20px;
         border-bottom: 1px solid #ddd;
         .terms{
+           
             span{
                 display: inline-block;
                 margin-right: 40px;
-                font-weight: 600;
+                font-weight: 500;
                 position: relative;
-                color: #fff;
+                a{
+                    color: #fff;
+                    
+                }
                 &::after{
                     content: "";
                     position: absolute;
@@ -353,7 +380,7 @@ padding: 50px 0px;
     }
     .info{
         .company{
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 10px;
         }
         p{
@@ -363,6 +390,7 @@ padding: 50px 0px;
                 margin-right: 40px;
                 position: relative;
                 font-size: 15px;
+                font-weight: 200;
                 &::after{
                     content: "";
                     position: absolute;

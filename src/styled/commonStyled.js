@@ -18,5 +18,21 @@ export const h2 = {
     boxSizing: 'border-box'
 }
 
-export const mainColor = '#BE0E0E'
-export const subColor = '#5C8555'
+export const mainColor = '#e6002d'
+export const subColor = '#001a58'
+
+export const button = {
+    height: '55px',
+    transform: 'skew(-20deg)',
+    width: '48%',
+    border: 'none',
+    boxShadow:'3px 3px 3px rgba(0,0,0,0.4)',
+    cursor:'pointer'
+}
+export const buttonText = {
+    display: 'block',
+    transform: 'skew(20deg)',
+    fontSize: '16px',
+    fontWeight: 600,
+    color: '#fff'
+}

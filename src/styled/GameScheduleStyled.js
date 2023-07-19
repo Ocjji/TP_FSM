@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { h2, inner } from './commonStyled'
+import { h2, inner, subColor } from './commonStyled'
 import { bg } from './HomeStyled'
 
 export const GameScheduleWrap = styled.div`
     h2{
         ${h2}
         ${bg}
-        background-image: url('../../public/images/visual/visual3.png');
-        
+        background-position: center;
+        background-image: url('../../public/images/visual/notice.png');
     }
     .inner{
         ${inner}
@@ -17,6 +17,7 @@ export const GameScheduleWrap = styled.div`
             select{
                 width: 150px;
                 padding: 10px;
+                font-size: 16px;
             }
         }
         ul{
@@ -78,12 +79,14 @@ export const GameScheduleWrap = styled.div`
             span{
                 cursor: pointer;
                 display: inline-block;
+                text-align: center;
                 margin: 5px;
                 padding: 1px 10px;
                 border-radius: 50%;
                 box-sizing: border-box;
+                background: #eee;
                 &.on,&:hover{
-                    background: #333;
+                    background: ${subColor};
                     color: #fff;
                 }
             }

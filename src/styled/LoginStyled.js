@@ -1,5 +1,5 @@
 import {styled} from 'styled-components'
-import { h2, inner, mainColor, subColor } from './commonStyled'
+import { button, buttonText, h2, inner, mainColor, subColor } from './commonStyled'
 
 export const LoginWrap = styled.div`
 
@@ -16,21 +16,22 @@ export const LoginWrap = styled.div`
             input{
                 width: 400px;
                 box-sizing: border-box;
-                height: 40px;
+                height: 55px;
                 margin-bottom: 10px;
                 border:none;
                 background: #eee;
-                padding: 0px 10px;
+                padding: 0px 20px;
+                outline: none;
             }
             button{
-                box-sizing: border-box;
-                width: 150px;
-                height: 40px;
                 margin-top: 20px;
-                border:none;
-                background: #000;
-                color: #fff;
-                cursor: pointer;
+                ${button}
+                    width: 380px;
+                    background: ${subColor};
+                    span{
+                        ${buttonText}
+
+                    }
             }
         }
         .findBtn{
@@ -152,14 +153,13 @@ export const LoginWrap = styled.div`
                     &.btnWrap{
                         text-align: center;
                         button{
-                            &.closeBtn{ margin-right: 20px;}
-                            border: none;
+                            ${button}
                             background: ${mainColor};
-                            color: #fff;
-                            padding: 10px 15px;
-                            width: 150px;
+                            span{
+                                ${buttonText}
+                            }
                             &.closeBtn{
-                                background:#333;
+                                background: ${subColor};
                             }
                         }
                     }
@@ -311,9 +311,12 @@ export const JoinWrap = styled.div`
             margin-top: 50px;
             text-align: center;
             button{
-                width: 300px;height: 50px;
-                color: #fff;
-                background: #333;
+                ${button}
+                width: 400px;
+                background: ${mainColor};
+                span{
+                    ${buttonText}
+                }
             }
         }
     }

@@ -31,7 +31,7 @@ const GameSchedule = () => {
             <div className='inner'>
                 <div className='selectBox'>
                     <select onChange={handleYearChange}>
-                        <option value="all">년도선택</option>
+                        <option value="all">경기일정</option>
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -50,7 +50,7 @@ const GameSchedule = () => {
                     {
                         paging.map(item=><span key={item} onClick={()=>{setCurrentPage(item), clickLink()}} className={currentPage===item?'on':''}>{item}</span>)
                     }
-                    <i onClick={()=>{currentPage<lastPageNum && setCurrentPage(currentPage+1),clickLink()}}><AiOutlineRight/></i>
+                    <i onClick={()=>{currentPage<lastPageNum && setCurrentPage(currentPage+1,clickLink())}}><AiOutlineRight/></i>
                     <i onClick={()=>{setCurrentPage(lastPageNum), clickLink()}}><AiOutlineDoubleRight/></i>
                 </p>
             </div>
