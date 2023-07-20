@@ -221,8 +221,8 @@ export const GoodsNavStyle = styled.nav`
         li {
             cursor: pointer;
             height: 40px;
-            font-weight: 600;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 20px;
             line-height: 40px;
             &.kfaSelect {
                 height: 160px;

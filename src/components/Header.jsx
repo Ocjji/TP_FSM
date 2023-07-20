@@ -26,7 +26,7 @@ const Header = () => {
                     <nav className="nav">
                         <ul className="gnb">
                             <li><Link to={'/'} onClick={clickLink}>All Players</Link></li>
-                            <li><Link to={'/'} onClick={clickLink}>Squad Maker</Link></li>
+                            <li><Link to={'/squrd'} onClick={clickLink}>Squad Maker</Link></li>
                             <li><Link to={'/game_schedule'} onClick={clickLink}>Game Schedule</Link></li>
                             <li><Link to={'/'} onClick={clickLink}>Notice</Link></li>
                             <li><Link to={'/news'} onClick={clickLink}>News</Link></li>

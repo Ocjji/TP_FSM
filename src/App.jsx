@@ -12,6 +12,7 @@ import Logout from './pages/login/Logout';
 import Log from './pages/login/Log';
 import JoinForm from './pages/login/JoinForm';
 import GoodsLayout from "./pages/store/GoodsLayout";
+import PlayGround from "./pages/squrd/PlayGround";
 const App = () => {
   return (
     <>
@@ -30,6 +31,7 @@ const App = () => {
             <Route path='/logout' element={<Logout />} />
             <Route path='/join' element={<JoinForm />} />
             <Route path='/store' element={<GoodsLayout />} />
+            <Route path='/squrd' element={<PlayGround />} />
           </Route>
         </Routes>
       </BrowserRouter>
