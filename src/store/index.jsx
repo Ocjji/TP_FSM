@@ -4,6 +4,7 @@ import goodsReducer from "./modules/goodsSlice";
 import newsReducer from "./modules/newsSlice";
 import gameScheduleReducer from "./modules/gameScheduleSlice";
 import noticeReducer from "./modules/noticeSlice";
+import authorityR from "./modules/authoritySlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
         newsR: newsReducer,
         gameScheduleR: gameScheduleReducer,
         noticeR: noticeReducer,
+        authorityR
     }
 })

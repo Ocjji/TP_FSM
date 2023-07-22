@@ -1,6 +1,6 @@
 import {styled} from 'styled-components'
 import { bg } from './HomeStyled';
-import { h2, inner, subColor } from './commonStyled';
+import { button, buttonText, h2, inner, mainColor, subColor } from './commonStyled';
 
 export const NoticeLayoutWrap = styled.div`
     h2{
@@ -92,7 +92,6 @@ export const NoticeWrap = styled.div`
         .pagingBox{
             text-align: center;
             font-size: 18px;
-            margin-top:50px;
             i{ 
                 cursor: pointer;
                 vertical-align: middle;
@@ -112,9 +111,134 @@ export const NoticeWrap = styled.div`
                 }
             }
         }
+        .writeBtn{
+            text-align: end;
+            padding-top: 30px;
+            button{
+                ${button}
+                width: 200px;  
+                background: ${subColor};
+                a{
+                    ${buttonText}
+                }
+            }
+        }
     }
 `
 
 export const NoticeDetailWrap = styled.div`
+    .inner{
+        ${inner}
+        padding: 100px 0px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 50px;        
+        .w1{width:10%}
+        .w2{width:40%}
+        .w3{width:10%}
+        .w4{width:40%}
+        tr{
+            border-bottom: 1px solid #ccc;
+            &:first-child{
+                border-top: 2px solid #000;
+            }
+            &:last-child{
+                border-bottom: 2px solid #000;
+            }
+            td{
+                padding: 20px;
+                &.th{
+                    text-align: center;
+                    border-right: 1px solid #ccc;
+                }
+            }
+            
+        }
+    }
+    .btnWrap{
+        text-align: center;
+        button{
+            ${button}
+            width: 200px;
+            background: ${subColor};
+            /* width: 100px;
+            height:40px;
+            border: none;
+            color: #fff; */
+            &.editBtn{
+                background: ${mainColor};
+                margin: 0px 20px;
+            }
+            span{
+                ${buttonText}
+            }
+        }
+    }
+`
 
+export const NoticeAddForm = styled.div`
+    .inner{
+        ${inner}
+        padding: 100px 0;
+    }
+    h3{
+        font-size: 25px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    form{
+        width: 100%;
+        p{
+            strong{
+                display: inline-block;
+                border: 1px solid #888;
+                width: 150px;
+                color: #999;
+            }
+            select, input, textarea,strong{
+                font-size: 16px;
+                padding: 10px 20px;
+                outline: none;
+            }
+            &.titleInput{
+                display: flex;
+                
+                select,strong{
+                    margin-right: 20px;
+                }
+                input{
+                    width: 100%;
+                }
+            }
+            &.contentBox{
+                margin: 20px 0px 30px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #ccc;
+
+                textarea{
+                    width: 100%;
+                    overflow: auto;
+                    padding: 30px;
+                    box-sizing: border-box;
+                }
+            }
+            &.btnWrap{
+                text-align: center;
+                button{
+                    ${button}
+                    width: 200px;
+                    background: ${subColor};
+                    span{
+                        ${buttonText}
+                    }
+                    &.submitBtn{
+                        background: ${mainColor};
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
 `
