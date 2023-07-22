@@ -6,7 +6,9 @@ const initialState = {
     currentCategory : 'all',
     my_squadData:[],
     free_boardData:[],
+    editData:[]
 }
+let no = 11
 export const noticeSlice = createSlice({
     name:'notice',
     initialState,
@@ -24,7 +26,6 @@ export const noticeSlice = createSlice({
                     state.my_squadData = state.noticeData
                 }else{
                     state.free_boardData = state.noticeData
-                    // console.log(state.free_boardData)
                 }
             }
         },
@@ -39,9 +40,24 @@ export const noticeSlice = createSlice({
             else if(state.currentCategory==='free_board'){
                 state.noticeData = state.free_boardData.filter(item=>item.title.includes(action.payload)||item.content.includes(action.payload)||item.userName.includes(action.payload))
             }
+        },
+        onViewPlus(state,action){
+            state.data = state.data.map(item=>item.id===action.payload?{...item, view:Number(item.view)+1}:item)
+        },
+        onAdd(state, action){
+            state.data.push({id:no++, ...action.payload, userName:'test', view:0})
+        },
+        onDel(state, action){
+            state.data = state.data.filter(item=>item.id !== action.payload)
+        },
+        onEdit(state, action){
+            state.editData = action.payload
+        },
+        onUpdate(state, action){
+            state.data = state.data.map(item=>item.id===action.payload.id?{...item, ...action.payload}:item)
         }
     }
 })
 
-export const {sortDate,changeCategory,onSearch} = noticeSlice.actions
+export const {sortDate,changeCategory,onSearch,onAdd,onViewPlus, onDel,onEdit,onUpdate} = noticeSlice.actions
 export default noticeSlice.reducer
