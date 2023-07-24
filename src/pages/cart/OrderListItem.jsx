@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { changeAmount, onDelCartSelectedItem } from '../../store/modules/goodsSlice';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const CartItem = memo(({ item, index }) => {
+const OrderListItem = memo(({ item, index }) => {
     const { id, amount, brand, name, discount, img, extension, price, soldout, size } = item
     const dispatch = useDispatch()
     const onPlusAmount = () => {
@@ -43,14 +43,12 @@ const CartItem = memo(({ item, index }) => {
                     </span>
                 }
                 <AmountWrap>
-                    <button onClick={onMinusAmount}>-</button>
-                    <span>{amount}</span>
-                    <button onClick={onPlusAmount}>+</button>
+                    <span style={{ border: "none", textAlign: "left", fontSize: "16px" }}>{amount}개</span>
                 </AmountWrap>
             </div>
-            <i onClick={() => dispatch(onDelCartSelectedItem(id))}><AiOutlineClose /></i>
+            <p style={{ color: 'red' }}>배송준비중</p>
         </CartItemBox>
     );
 });
 
-export default CartItem;
+export default OrderListItem;

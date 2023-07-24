@@ -8,11 +8,20 @@ export const CartList = styled.div`
         ul{
             display:flex;
             padding:20px 0;
+            font-size:18px;
+            border-bottom: 3px solid #ECECEC;
+            margin-bottom:20px;
+
             li{
                 width:50%;
-                border: 1px solid #000;
+                border-bottom: 1px solid #ccc;
                 text-align:center;
                 padding:10px 0;
+                cursor: pointer;
+                &.on{
+                    font-weight:700;
+                    border-bottom: 2px solid #000;
+                }
             }
         }
         .cartInfo{
@@ -54,6 +63,7 @@ export const CartList = styled.div`
 export const CartItemBox = styled.div`
     display:flex;
     padding:15px;
+    position:relative;
     img{
         width: 150px;
         height: 150px;
@@ -80,6 +90,14 @@ export const CartItemBox = styled.div`
             }
         }
     }
+    i,p{
+        position:absolute;
+        right:20px;
+        font-size:20px;
+    }
+    i{
+        cursor:pointer;
+    }
 `
 export const BtnWrap = styled.div`
     margin-top:30px;
@@ -93,5 +111,28 @@ export const BtnWrap = styled.div`
         &:nth-of-type(1){
             margin-bottom:10px;
         }
+    }
+`
+
+export const AmountWrap = styled.div`
+    display: flex;
+    font-size:14px;
+    span{
+        border-top:1px solid #888;
+        border-bottom:1px solid #888;
+        display:block;
+        width:30px;
+        text-align: center;
+        line-height:25px;
+        height: 25px;
+        box-sizing: border-box;
+    }
+    button{
+        vertical-align:middle;
+        cursor: pointer;
+        text-align: center;
+        /* line-height:25px; */
+        border:1px solid #888;
+        background-color:white;
     }
 `
