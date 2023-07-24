@@ -9,7 +9,7 @@ const GoodsPopup = () => {
     const [amount, setAmount] = useState(1);
     const [size, setSize] = useState("");
     const [readyToCart, setReadyToCart] = useState(popupData);
-    const [isAddPopup, setIsAddPopup] = useState(false);
+    // const [isAddPopup, setIsAddPopup] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -35,15 +35,15 @@ const GoodsPopup = () => {
         setSize(e.target.value);
     }
     const addSuccessPopup = () => {
-        setIsAddPopup(true);
-        setTimeout(() => {
-            setIsAddPopup(false);
-        }, 1000);
+        // setIsAddPopup(true);
+        // setTimeout(() => {
+        //     setIsAddPopup(false);
+        // }, 1000);
     }
     const onAdd = () => {
         if (!size) { alert("사이즈를 선택해주세요"); return }
         dispatch(onAddCart(readyToCart));
-        addSuccessPopup();
+        // addSuccessPopup();
     }
     return (
         <GoodsPopupStyle className="goodsPopup" >
@@ -119,11 +119,11 @@ const GoodsPopup = () => {
                         </div>
                     </div>
                 </div>
-                {isAddPopup &&
+                {/* {isAddPopup &&
                     <div className="addPopup">
                         <h3>장바구니에 담겼습니다</h3>
                     </div>
-                }
+                } */}
 
             </div>
         </GoodsPopupStyle >

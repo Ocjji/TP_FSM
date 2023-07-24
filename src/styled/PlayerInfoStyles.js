@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 const inner = {
     width: '1400px',
     margin: 'auto',
