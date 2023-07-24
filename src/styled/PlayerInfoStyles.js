@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Color from './../../../../07_react/day14/src/components/color/Color';
+import styled from 'styled-components';
+
 const inner = {
     width: '1400px',
     margin: 'auto',
