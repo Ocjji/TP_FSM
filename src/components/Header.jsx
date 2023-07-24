@@ -23,20 +23,20 @@ const Header = () => {
                 <div className='inner'>
 
                     <h1><Link to={'/'} onClick={goUp}><img src='https://via.placeholder.com/100x50' alt='풋볼스쿼드메이커' /></Link></h1>
-                    
+
                     <div className="top_menu">
                         <Link to={'/'} onClick={goUp}><i><AiOutlineGlobal /></i></Link>
-                        <Link to={'/'} onClick={goUp}><i><BsCart3 /></i></Link>
+                        <Link to={'/cart'} onClick={goUp}><i><BsCart3 /></i></Link>
                         <Link to={'/login'} onClick={goUp}><i><BiUser /></i></Link>
                     </div>
 
                     <nav className="nav">
                         <ul className="gnb">
-                            <li><Link to={'/'}  onClick={goUp}>All Players</Link></li>
+                            <li><Link to={'/playerInfo'} onClick={goUp}>All Players</Link></li>
                             <li><Link to={'/squad'} onClick={goUp}>Squad Maker</Link></li>
-                            <li><Link to={'/game_schedule'}  className={location.pathname==='/game_schedule'?'on':''} onClick={goUp}>Game Schedule</Link></li>
+                            <li><Link to={'/game_schedule'} className={location.pathname === '/game_schedule' ? 'on' : ''} onClick={goUp}>Game Schedule</Link></li>
                             <li><Link to={'/notice'} onClick={goUp}>Notice</Link></li>
-                            <li><Link to={'/news'} onClick={()=>{goUp(),dispatch(resetCurrentPerPosts())}}>News</Link></li>
+                            <li><Link to={'/news'} onClick={() => { goUp(), dispatch(resetCurrentPerPosts()) }}>News</Link></li>
                             <li><Link to={'/store'} onClick={goUp}>Store</Link></li>
                         </ul>
                     </nav>
