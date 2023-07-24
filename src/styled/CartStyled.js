@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { inner } from './commonStyled'
-
+import { inner, mainColor, subColor } from './commonStyled'
 export const CartList = styled.div`
     margin-top:120px;
     .inner{
@@ -84,7 +83,7 @@ export const CartItemBox = styled.div`
                     margin-right:6px;
                 }
                 strong{
-                    color: #B41B3A;
+                    color: ${mainColor};
                     font-weight:700;
                 }
             }
@@ -104,7 +103,7 @@ export const BtnWrap = styled.div`
     button{
         cursor: pointer;
         width: 100%;
-        background-color:#00155D;
+        background-color:${subColor};
         font-size:20px;
         color:white;
         padding:15px 0;
