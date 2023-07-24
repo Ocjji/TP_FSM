@@ -31,12 +31,13 @@ const AddPlayerData = memo(() => {
     const [scoreSave, setScoreSave] = useState('')
     const [goalsConceded, setGoalsConceded] = useState('')
     const [cleanSheet, setCleanSheet] = useState('')
+    const [backno, setBackno] = useState('')
     const [IncludeMySquad, setIncludeMySquad] = useState(false)
     const onSubmit = (e) => {
         e.preventDefault()
         if (!name || !position || !height || !weight) return
-        dispatch(onAdd({ img, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, activePlayer, scoreSave, goalsConceded, cleanSheet, IncludeMySquad }))
-        navigate('/')
+        dispatch(onAdd({ img, backno, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, activePlayer, scoreSave, goalsConceded, cleanSheet, IncludeMySquad }))
+        navigate('/playerInfo')
     }
     const isSelectPosition = e => {
         const selectPosition = e.target.value
@@ -70,6 +71,8 @@ const AddPlayerData = memo(() => {
                                 <option value="DF">DF</option>
                                 <option value="GK">GK</option>
                             </select>
+                            <label htmlFor="">등번호</label>
+                            <input type="text" value={backno} onChange={(e) => setBackno(e.target.value)} />
                             <label htmlFor="">키</label>
                             <input type="text" value={height} onChange={(e) => setHeight(e.target.value)} required />
                             <label htmlFor="">몸무게</label>
