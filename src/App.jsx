@@ -11,9 +11,15 @@ import Logout from './pages/login/Logout';
 import Log from './pages/login/Log';
 import JoinForm from './pages/login/JoinForm';
 import GoodsLayout from "./pages/store/GoodsLayout";
+
 import NoticeLayout from './pages/notice/NoticeLayout';
 import Notice from './pages/notice/Notice';
 import NoticeDetail from './pages/notice/NoticeDetail';
+import NoticeAdd from './pages/notice/NoticeAdd';
+import NoticeEdit from './pages/notice/NoticeEdit';
+
+import PlayGround from "./pages/squrd/PlayGround";
+
 const App = () => {
   return (
     <>
@@ -21,21 +27,30 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
+
             <Route index element={<Home />} />
+
+            <Route path='/game_schedule' element={<GameSchedule />} />
+
             <Route path='/notice' element={<NoticeLayout/>}>
               <Route index element={<Notice/>}/>
               <Route path=':noticeID' element={<NoticeDetail/>}/>
+              <Route path='writing' element={<NoticeAdd/>}/>
+              <Route path='edit' element={<NoticeEdit/>}/>
             </Route>
+
             <Route path='/news' element={<NewsLayout />}>
               <Route index element={<News />} />
               <Route path=':newsID' element={<NewsDetail />} />
             </Route>
-            <Route path='/game_schedule' element={<GameSchedule />} />
+
             <Route path='/store' element={<GoodsLayout />} />
+
             <Route path='/login' element={<Log />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/join' element={<JoinForm />} />
-            
+            <Route path='/store' element={<GoodsLayout />} />
+            <Route path='/squad' element={<PlayGround />} />
           </Route>
         </Routes>
       </BrowserRouter>

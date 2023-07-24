@@ -33,14 +33,13 @@ const Header = () => {
                     <nav className="nav">
                         <ul className="gnb">
                             <li><Link to={'/'}  onClick={goUp}>All Players</Link></li>
-                            <li><Link to={'/'} onClick={goUp}>Squad Maker</Link></li>
+                            <li><Link to={'/squad'} onClick={goUp}>Squad Maker</Link></li>
                             <li><Link to={'/game_schedule'}  className={location.pathname==='/game_schedule'?'on':''} onClick={goUp}>Game Schedule</Link></li>
                             <li><Link to={'/notice'} onClick={goUp}>Notice</Link></li>
                             <li><Link to={'/news'} onClick={()=>{goUp(),dispatch(resetCurrentPerPosts())}}>News</Link></li>
                             <li><Link to={'/store'} onClick={goUp}>Store</Link></li>
                         </ul>
                     </nav>
-
                 </div>
             </div>
         </HeaderWrap>

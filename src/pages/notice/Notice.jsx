@@ -5,11 +5,13 @@ import NoticeList from './NoticeList';
 import { NoticeWrap } from '../../styled/NoticeStyled';
 import { changeCategory, onSearch, sortDate } from '../../store/modules/noticeSlice';
 import {AiOutlineDoubleLeft,AiOutlineLeft,AiOutlineRight,AiOutlineDoubleRight} from 'react-icons/ai'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Notice = () => {
 
     const {noticeData} = useSelector(state=>state.noticeR)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [text, setText] = useState('') 
 
     const onChangeSelect = e=>{
@@ -76,6 +78,9 @@ const Notice = () => {
                         </tbody>
                     </table>
                 </div>
+                <p className='writeBtn'>
+                    <button><Link to={'/notice/writing'}>글쓰기</Link> </button>
+                </p>
                 <div className='pagingBox'>
                     <i onClick={()=>{setCurrentPage(1), clickLink()}}><AiOutlineDoubleLeft/></i>
                     <i onClick={()=>{currentPage > 1 && setCurrentPage(currentPage-1,clickLink())}}><AiOutlineLeft/></i>
