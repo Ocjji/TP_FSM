@@ -31,8 +31,12 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
-
             <Route index element={<Home />} />
+
+            <Route index path='/PlayerInfo' element={<PlayerInfo />} />
+            <Route path='/addPlayer' element={<AddPlayerData />} />
+
+            <Route path='/squad' element={<PlayGround />} />
 
             <Route path='/game_schedule' element={<GameSchedule />} />
 
@@ -49,15 +53,11 @@ const App = () => {
             </Route>
 
             <Route path='/store' element={<GoodsLayout />} />
+            <Route path='/cart' element={<Cart />} />
 
             <Route path='/login' element={<Log />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/join' element={<JoinForm />} />
-            <Route path='/store' element={<GoodsLayout />} />
-            <Route path='/squad' element={<PlayGround />} />
-            <Route index path='/PlayerInfo' element={<PlayerInfo />} />
-            <Route path='/addPlayer' element={<AddPlayerData />} />
-            <Route path='/cart' element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>
