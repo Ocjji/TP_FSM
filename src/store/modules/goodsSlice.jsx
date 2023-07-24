@@ -11,7 +11,10 @@ const initialState = {
     goodsListView: goodsData,
     sortOption: "recent",
     currentCategory: "all",
-    cart: []
+    cart: localStorage.getItem('cart')
+        ? JSON.parse(localStorage.getItem('cart'))
+        : [],
+    orderList: []
 };
 
 export const goodsSlice = createSlice({
@@ -65,11 +68,34 @@ export const goodsSlice = createSlice({
             }
         },
         onAddCart(state, action) {
-            state.cart = [...state.cart, action.payload];
+            const confirmDelData = confirm(`장바구니에 담으시겠습니까?`)
+            if (confirmDelData) {
+                state.cart = [...state.cart, action.payload];
+                state.isGoodsPopup = false;
+                alert("담겼습니다.")
+            }
+            else alert("취소되었습니다.")
             console.log(state.cart);
+            localStorage.setItem('cart', JSON.stringify(state.cart))
         },
+        changeAmount(state, action) {
+            const index = action.payload.index
+            state.cart[index].amount = action.payload.newValue
+            localStorage.setItem('cart', JSON.stringify(state.cart))
+        },
+        onDelCartSelectedItem(state, action) {
+            state.cart = state.cart.filter(item => item.id !== action.payload)
+            localStorage.setItem('cart', JSON.stringify(state.cart))
+        },
+        onDelCartAllItem(state, action) {
+            state.cart = []
+            localStorage.setItem('cart', JSON.stringify(state.cart))
+        },
+        changeOrderList(state, action) {
+            state.orderList = action.payload
+        }
     }
 })
 
-export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort, onAddCart } = goodsSlice.actions;
+export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort, onAddCart, changeAmount, onDelCartSelectedItem, onDelCartAllItem, changeOrderList } = goodsSlice.actions;
 export default goodsSlice.reducer;
