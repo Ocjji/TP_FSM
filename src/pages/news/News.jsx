@@ -26,7 +26,7 @@ const News = () => {
                     :<span>총 <b>{currentData.length}</b> 개</span>
                 }
                 <form onSubmit={onSubmit}>
-                    <input type="text" value={text} onChange={e=>setText(e.target.value)}/>
+                    <input type="text" value={text} onChange={e=>setText(e.target.value)} placeholder='제목을 검색하세요'/>
                     <button type='submit'><i><BsSearch/></i></button>
                 </form>
             </div>
