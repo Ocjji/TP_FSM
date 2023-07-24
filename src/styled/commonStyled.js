@@ -26,8 +26,8 @@ export const button = {
     transform: 'skew(-20deg)',
     width: '48%',
     border: 'none',
-    boxShadow:'3px 3px 3px rgba(0,0,0,0.4)',
-    cursor:'pointer'
+    boxShadow: '3px 3px 3px rgba(0,0,0,0.4)',
+    cursor: 'pointer'
 }
 export const buttonText = {
     display: 'block',
