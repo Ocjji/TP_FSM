@@ -99,6 +99,17 @@ const JoinForm = () => {
             setEmailAddr('')
         }
     }
+
+    // const [id,setId] = useState('')
+    // const [name,setName] = useState('')
+    // const [password,setPassword] = useState('')
+    // const [pwConfirm,setPwConfirm] = useState('')
+    // const [email,setEmail] = useState('')
+    // const [phone,setPhone] = useState('')
+    // const [birth,setBirth] = useState('')
+    const [user,setUser] = useState(
+        {id:''}
+    )
     return (
         <JoinWrap>
             <h2>회원가입</h2>
@@ -115,7 +126,7 @@ const JoinForm = () => {
                         <tbody>
                             <tr>
                                 <td><label htmlFor="userId"><b>*</b>아이디</label></td>
-                                <td><input type="text" id='userId' placeholder='영소문자/숫자, 4~16자리' required className='w700' /></td>
+                                <td><input type="text" id='userId' placeholder='영소문자/숫자, 4~16자리' required className='w700' value={id} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userPw"><b>*</b>비밀번호</label> </td>
@@ -147,12 +158,12 @@ const JoinForm = () => {
                                 <td><label htmlFor="userTel"><b>*</b>휴대폰번호</label> </td>
                                 <td className='telSelect'>
                                     <select name="" id="userTel" title='선택'>
-                                        <option value="">010</option>
-                                        <option value="">011</option>
-                                        <option value="">016</option>
-                                        <option value="">017</option>
-                                        <option value="">018</option>
-                                        <option value="">019</option>
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
                                     </select>
                                     <span>-</span>
                                     <input type="text" required className='w200'/>
@@ -176,15 +187,15 @@ const JoinForm = () => {
                                     <p>
                                         <select name="" id="userBirth" >
                                             <option value="">년도</option>
-                                            {birthYear.map(item=><option key={item}> {item}</option>)}
+                                            {birthYear.map(item=><option key={item} value={item}> {item}</option>)}
                                         </select>
                                         <select name="" >
                                             <option value="">월</option>
-                                            {birthMonth.map(item=><option key={item}> {item}</option>)}
+                                            {birthMonth.map(item=><option key={item} value={item}> {item}</option>)}
                                         </select>
                                         <select name="" >
                                             <option value="">일</option>
-                                            {birthDate.map(item=><option key={item}> {item}</option>)}
+                                            {birthDate.map(item=><option key={item} value={item}> {item}</option>)}
                                         </select>
                                     </p>
                                     <p>
@@ -221,8 +232,6 @@ const JoinForm = () => {
                         </tbody>
                     </table>
                     <h4>약관동의</h4>
-                    {/* <div className='clasuseAll'>
-                    </div> */}
                     <div className='clasuseSelect'>
                         <p>
                             <input type="checkbox" name='all' onChange={changeCheckbox} checked={clauseData.filter(item=>item.isChk===false).length<1}/>
@@ -232,13 +241,13 @@ const JoinForm = () => {
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[0].isChk} name={clauseData[0].name}/>
                             <label htmlFor="">{clauseData[0].title}</label>
                             <span onClick={()=>clasueShow(clauseData[0].id, clauseData[0].isShow)}>약관보기</span>
-                            <div className={clauseData[0].isShow?'on':''}>{clauseData[0].desc}</div>                        
+                            <em className={clauseData[0].isShow?'on':''}>{clauseData[0].desc}</em>                        
                         </p>
                         <p>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[1].isChk} name={clauseData[1].name}/>
                             <label htmlFor="">{clauseData[1].title}</label>
                             <span onClick={()=>clasueShow(clauseData[1].id, clauseData[1].isShow)}>약관보기</span>
-                            <div className={clauseData[1].isShow?'on':''}>{clauseData[1].desc}</div>  
+                            <em className={clauseData[1].isShow?'on':''}>{clauseData[1].desc}</em>  
                         </p>
                         <p>
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[2].isChk} name={clauseData[2].name}/>
@@ -246,11 +255,11 @@ const JoinForm = () => {
                             <input type="checkbox"  onChange={changeCheckbox} checked={clauseData[3].isChk} name={clauseData[3].name}/>
                             <label htmlFor="">{clauseData[3].title}</label>
                             <span onClick={()=>clasueShow(clauseData[2].id, clauseData[2].isShow)}>약관보기</span>
-                            <div className={clauseData[2].isShow?'on':''}>{clauseData[2].desc}</div>  
+                            <em className={clauseData[2].isShow?'on':''}>{clauseData[2].desc}</em>  
                         </p>
                     </div>
                     <p className='submitBtn'>
-                        <button type='subnit'>회원가입</button>
+                        <button type='subnit'><span>회원가입</span></button>
                     </p>
                 </form>
             </div>

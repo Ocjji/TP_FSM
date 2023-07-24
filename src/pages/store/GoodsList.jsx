@@ -18,7 +18,7 @@ const GoodsList = () => {
     return (
         <div>
             <CategoryInfoStyle className="categoryInfo">
-                <span>{totalItemCount}<b>개의 상품</b></span>
+                <span>{totalItemCount}<b> 개의 상품</b></span>
                 <select name="" id="" onChange={(e) => { dispatch(listSort(e.target.value)) }} >
                     <option value="recent">최근 등록순</option>
                     <option value="lowPrice">낮은 가격순</option>

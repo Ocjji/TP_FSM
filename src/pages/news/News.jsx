@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import newsData from '../../assets/api/newsData.json'
 import NewsList from './NewsList';
 import {BsSearch} from 'react-icons/bs'
+import { useDispatch, useSelector } from 'react-redux';
+import { newsDataSort, onAddPosts, onPerPosts, searchFilter } from '../../store/modules/newsSlice';
 const News = () => {
-    const data = newsData.sort((a,b)=>b.id -a.id) 
-    const [searchData, setSearchData] = useState(data)
-    const [text, setText] = useState('')
+    const {newsData,currentData,currentPerPosts} = useSelector(state=>state.newsR)
+    const dispatch = useDispatch()
 
+    const [text, setText] = useState('')
     const onSubmit=e=>{
         e.preventDefault()
-        setSearchData(data.filter(item=>item.title.includes(text)))
+        dispatch(searchFilter(text))
     }
-    const [currentPosts , setCurrentPosts] = useState(12)
-    const fillterPosts = searchData.slice(0, currentPosts)
-    const onAddPosts =()=>{
-        setCurrentPosts(currentPosts+8)
-    }
+
+    useEffect(()=>{
+        dispatch(newsDataSort())
+        dispatch(onPerPosts())
+    },[currentPerPosts])
     return (
         <div className='news'>
             <div className="topSearch">
                 {
                     text === '' ?
-                    <span>총 {data.length} 개</span>
-                    :<span>총 {fillterPosts.length} 개</span>
+                    <span>총 <b>{newsData.length}</b> 개</span>
+                    :<span>총 <b>{currentData.length}</b> 개</span>
                 }
                 <form onSubmit={onSubmit}>
                     <input type="text" value={text} onChange={e=>setText(e.target.value)}/>
@@ -30,10 +31,10 @@ const News = () => {
                 </form>
             </div>
             <ul className='newsList'>
-                {fillterPosts.map(item=><NewsList key={item.id} item={item}/>)}
+                {currentData.map(item=><NewsList key={item.id} item={item}/>)}
             </ul>
             <p className='moreBtn'>
-                <button onClick={onAddPosts}>더보기</button>
+                <button onClick={()=>dispatch(onAddPosts(8))}><span>더보기</span></button>
             </p>
         </div>
     );

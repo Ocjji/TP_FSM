@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import newsData from '../../assets/api/newsData.json'
 import {MdDateRange} from 'react-icons/md'
 import {AiOutlineLink} from 'react-icons/ai'
 import {BiLogoFacebook} from 'react-icons/bi'
@@ -11,9 +10,11 @@ import { Navigation, Pagination } from 'swiper/modules';
 import "swiper/scss"
 import "swiper/scss/navigation"
 import "swiper/scss/pagination"
+import { useSelector } from 'react-redux';
 
 const NewsDetail = () => {
     const { newsID } = useParams()
+    const {newsData} = useSelector(state=>state.newsR)
     const currentPage = newsData.find(item=>item.id === Number(newsID))
     const prevPage = newsData.find(item=>item.id === Number(newsID)-1)
     const nextPage = newsData.find(item=>item.id === Number(newsID)+1)
@@ -48,7 +49,6 @@ const NewsDetail = () => {
                             img.map((item,idx)=><SwiperSlide key={idx}><div className='imgbox'><img src={item} alt={title} /></div></SwiperSlide>)
                         }
                     </Swiper>
-                    {/* <img src={img} alt={title} /> */}
                     <p>{desc}</p>
                 </div>
             </div>
