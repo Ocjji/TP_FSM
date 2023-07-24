@@ -15,7 +15,7 @@ const EditPlayerInfoItem = memo(() => {
     useEffect(() => {
         setCurrent(playerData.find(item => item.id === selectedItem.id))
     }, [])
-    const { id, fieldPlayers, name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, goal, assists, Shot, effectiveShot, playTime } = current
+    const { id, backno, fieldPlayers, name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, goal, assists, Shot, effectiveShot, playTime } = current
 
     const changeInput = (e) => {
         e.preventDefault()
@@ -39,7 +39,7 @@ const EditPlayerInfoItem = memo(() => {
     return (
         <PlayerItemPopup>
             <div className='popupTop'>
-                <span>{name}</span>
+                <span>NO.<input type="text" value={backno} name="backno" onChange={changeInput} /> - {name}</span>
                 <div className='iconWrap'>
                     <i><AiOutlineClose onClick={() => toggleEditmode()} /></i>
                 </div>

@@ -7,7 +7,7 @@ import { isSelectPlayer, onDel, onEdit } from './../../store/modules/playerInfoS
 const GKPlayerInfoPopup = memo(() => {
     const dispatch = useDispatch()
     const { selectedItem } = useSelector(state => state.playerInfo)
-    const { name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, cleanSheet, scoreSave, goalsConceded, playTime } = selectedItem
+    const { backno, name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, cleanSheet, scoreSave, goalsConceded, playTime } = selectedItem
     const deletePlayerData = () => {
         dispatch(onDel(selectedItem))
         dispatch(isSelectPlayer(null))
@@ -18,7 +18,7 @@ const GKPlayerInfoPopup = memo(() => {
     return (
         <PlayerItemPopup>
             <div className='popupTop'>
-                <span>{name}</span>
+                <span>NO.{backno} - {name}</span>
                 <div className='iconWrap'>
                     <i><AiFillEdit onClick={toggleEditmode} /></i>
                     <i><AiFillDelete onClick={deletePlayerData} /></i>
@@ -26,7 +26,7 @@ const GKPlayerInfoPopup = memo(() => {
                 </div>
             </div>
             <div className='popupMain'>
-                <img src={img} alt="" />
+                <img src={`./images/player/${img}`} alt="" />
                 <div className='popupContent'>
                     <div className="popupLeft">
                         <p>{teamNameKor}<em>({teamNation})</em></p>

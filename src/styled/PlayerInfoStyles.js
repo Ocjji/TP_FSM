@@ -96,6 +96,10 @@ export const PlayerList = styled.ul`
         cursor:pointer;
         &:hover{
             border: 1px solid red;
+            text-shadow: none;
+        }
+        &:hover .playerBackno{
+            color: #B41B3A;
         }
         img{
             height: 142px;
@@ -119,6 +123,15 @@ export const PlayerList = styled.ul`
                 top: 20px;
                 font-weight:700;
             }
+        }
+        .playerBackno{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size:60px;
+            line-height:60px;
+            text-shadow: 2px 2px 2px gray;
+            color: white;
         }
     }
 `
@@ -144,6 +157,11 @@ export const PlayerItemPopup = styled.div`
         span{
             font-weight:700;
             font-size:30px;
+            input[type=text]{
+                height: 30px;
+                vertical-align: middle;
+                font-size:30px;
+            }
         }
         .iconWrap{
             font-size:30px;

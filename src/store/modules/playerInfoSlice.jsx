@@ -14,7 +14,7 @@ const initialState = {
 export const getPlayerData = createAsyncThunk(
     'player/getPlayerData',
     async () => {
-        const res = await axios.get('https://gist.githubusercontent.com/audrhks29/0dadcb9679a74e25b8e7d386bc92d756/raw/12d5ef1c61805a55a9b1aac113ca40c926acc8e7/playerData.json')
+        const res = await axios.get('https://gist.githubusercontent.com/audrhks29/0dadcb9679a74e25b8e7d386bc92d756/raw/0a8ccaba6b773a4d59108177c0642e541c1b875e/playerData.json')
         return res.data
     }
 )
@@ -23,18 +23,18 @@ export const playerInfoSlice = createSlice({
     initialState: initialState,
     reducers: {
         onAdd(state, action) {
-            const { fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, scoreSave, goalsConceded, cleanSheet, IncludeMySquad } = action.payload
+            const { fieldPlayers, backno, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, scoreSave, goalsConceded, cleanSheet, IncludeMySquad } = action.payload
             let newPlayer = []
             console.log(position);
             if (position === "GK") {
                 newPlayer = {
                     id: state.playerData.length + 1,
-                    fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, scoreSave, goalsConceded, cleanSheet, img, activePlayer, IncludeMySquad
+                    fieldPlayers, backno, name, birth, position, height, weight, teamNameKor, teamNation, appearances, scoreSave, goalsConceded, cleanSheet, img, activePlayer, IncludeMySquad
                 }
             } else {
                 newPlayer = {
                     id: state.playerData.length + 1,
-                    fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, IncludeMySquad
+                    fieldPlayers, backno, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, IncludeMySquad
                 }
             }
             state.playerData.push(newPlayer);
@@ -52,12 +52,12 @@ export const playerInfoSlice = createSlice({
         },
         onEdit(state, action) {
             state.playerEditMode = !state.playerEditMode
-            const { id, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, scoreSave, goalsConceded, cleanSheet } = action.payload
+            const { id, backno, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer, scoreSave, goalsConceded, cleanSheet } = action.payload
             const index = state.playerData.findIndex(item => item.id === id);
             if (position === "GK") {
-                state.playerData[index] = { id, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, scoreSave, goalsConceded, cleanSheet, playTime, img, activePlayer };
+                state.playerData[index] = { id, backno, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, scoreSave, goalsConceded, cleanSheet, playTime, img, activePlayer };
             } else {
-                state.playerData[index] = { id, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer };
+                state.playerData[index] = { id, backno, fieldPlayers, name, birth, position, height, weight, teamNameKor, teamNation, appearances, goal, assists, playTime, Shot, effectiveShot, img, activePlayer };
             }
 
             state.selectedItem = action.payload
