@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { h2, inner, subColor } from './commonStyled';
+import { h2, inner, mainColor, subColor } from './commonStyled';
 import { bg } from './HomeStyled';
 
 
@@ -108,7 +108,7 @@ export const PlayerList = styled.ul`
             text-shadow: none;
         }
         &:hover .playerBackno{
-            color: #B41B3A;
+            color: ${mainColor};
         }
         img{
             height: 142px;
@@ -159,7 +159,7 @@ export const PlayerItemPopup = styled.div`
         display: block;
     }
     .popupTop{
-        background: #B41B3A;
+        background: ${mainColor};
         color: #fff;
         padding: 20px;
         position: relative;
@@ -205,10 +205,10 @@ export const PlayerItemPopup = styled.div`
         }
         .popupLeft{
             p{
-                color:#B41B3A;
-                border-bottom: 3px solid #B41B3A;
+                color:${mainColor};
+                border-bottom: 3px solid ${mainColor};
                 input[type=text]{
-                    color:#B41B3A;
+                    color:${mainColor};
                     font-size:16px;
                     font-weight:700;
                 }
@@ -242,7 +242,7 @@ export const PlayerItemPopup = styled.div`
         .popupRight{
             p{
                 color:#00155D;
-                border-bottom: 3px solid #00155D;
+                border-bottom: 3px solid ${subColor};
             }
             dl{
                 display: flex;
@@ -273,8 +273,8 @@ export const PlayerItemPopup = styled.div`
         }
         .popupRight_GK{
             p{
-                color:#00155D;
-                border-bottom: 3px solid #00155D;
+                color:${subColor};
+                border-bottom: 3px solid ${subColor};
             }
             dl{
                 display: flex;
@@ -305,7 +305,7 @@ export const PlayerItemPopup = styled.div`
             }
         }  
         button{
-            background-color: #00155D;
+            background-color: ${subColor};
             height: 40px;
             color:white;
             font-size:16px;

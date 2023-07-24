@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { subColor } from './commonStyled'
 const inner = {
     width: '1400px',
     margin: 'auto',
@@ -17,7 +18,7 @@ export const AddPlayerWrap = styled.div`
             button{
                 font-size:16px;
                 padding: 5px 20px;
-                background: #00155D;
+                background: ${subColor};
                 color:white;
             }
         }

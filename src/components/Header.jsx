@@ -22,7 +22,7 @@ const Header = () => {
             <div className='header'>
                 <div className='inner'>
 
-                    <h1><Link to={'/'} onClick={goUp}><img src='https://via.placeholder.com/100x50' alt='풋볼스쿼드메이커' /></Link></h1>
+                    <h1><Link to={'/'} onClick={goUp}><img src='./images/visual/logo_white.png' alt='풋볼스쿼드메이커' /></Link></h1>
 
                     <div className="top_menu">
                         <Link to={'/'} onClick={goUp}><i><AiOutlineGlobal /></i></Link>
