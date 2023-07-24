@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-const inner = {
-    width: '1400px',
-    margin: 'auto',
-    boxSizing: 'border-box',
-    position: 'relative',
-}
+import { h2, inner, subColor } from './commonStyled';
+import { bg } from './HomeStyled';
+
+
 
 export const PlayerInfoWrap = styled.div`
     width: 100%;
@@ -12,7 +10,16 @@ export const PlayerInfoWrap = styled.div`
     position: relative;
     .inner{
         ${inner}
-}
+        padding-top: 100px;
+    }
+    h2{
+        ${h2}
+        ${bg}
+        background-image: url('../../public/images/visual/visual2.jpg');
+        background-position: 0px -100px;
+        padding-top: 180px;
+        text-shadow: 0px 0px 10px #000;
+    }
 `
 
 export const PlayerInfoPopupBg = styled.div`
@@ -25,15 +32,9 @@ export const PlayerInfoPopupBg = styled.div`
 
 export const PlayerInfoBar = styled.div`
     width:100%;
-    border: 1px solid #000;
     position: relative;
-    h3{
-        font-weight:700;
-        font-size:30px; 
-        background-color: #00155D;
-        color:white;
-        padding:20px;
-    }
+    box-sizing: border-box;
+    margin-bottom: 20px;
     ul{
         display: flex;
         li{
@@ -43,10 +44,10 @@ export const PlayerInfoBar = styled.div`
             color:#ccc;
             padding: 10px 20px;
             &:hover{
-                color:#000;
+                color:${subColor};
             }
             &.on{
-                color:#000;
+                color:${subColor};
             }
         }
     }
@@ -54,21 +55,29 @@ export const PlayerInfoBar = styled.div`
         position:absolute;
         right:0;
         bottom:0;
-        transform:translateY(-50%);
         input[type=text]{
-            width: 200px;   
-            height: 22px;
-            vertical-align:middle;
-            border:1px solid #00155D;
+            border: 1px solid ${subColor};
+            padding: 10px 15px;
+            box-sizing: border-box;
+            height: 45px;
+            width: 300px;
+            font-size: 16px;
+            vertical-align: middle;
         }
         button{
-            height: 22px;
-            padding :0 10px;
-            font-size:22px;
-            line-height:22px;
-            vertical-align:middle;
-            color : #00155D;
+            vertical-align: middle;
+            height: 45px;
+            width: 50px;
+            border: none;
+            border: 1px solid ${subColor};
+            background:  ${subColor};
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
         }
+    }
+    .hide{
+        display: none;
     }
 `
 

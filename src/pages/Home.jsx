@@ -18,14 +18,14 @@ const Home = () => {
         <HomeWrap>
             <div className='visual1'>
                 <div className="inner">
-                    <p><Link to={'/'}><strong>Squad Maker</strong><i className='xi-long-arrow-right'></i></Link></p>
+                    <p><Link to={'/squad'}><strong>Squad Maker</strong><i className='xi-long-arrow-right'></i></Link></p>
 
                 </div>
             </div>
             <div className='visual2'>
                 <div className="inner">
                     <ul>
-                        <li><Link to={'/'} onClick={goUp}>
+                        <li><Link to={'/PlayerInfo'} onClick={goUp}>
                             <div>
                                 <img src="./images/visual/visual1.jpg" alt="" />
                             </div>

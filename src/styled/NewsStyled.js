@@ -34,17 +34,19 @@ export const NewsWrap = styled.div`
                         border: 1px solid ${subColor};
                         padding: 10px 15px;
                         box-sizing: border-box;
-                        height: 40px;
+                        height: 45px;
                         width: 300px;
+                        font-size: 16px;
+                        vertical-align: middle;
                     }
                     button{
                         vertical-align: middle;
-                        height: 40px;
+                        height: 45px;
                         width: 50px;
                         border: none;
+                        border: 1px solid ${subColor};
                         background:  ${subColor};
                         color: #fff;
-                        margin-left: 10px;
                         font-size: 20px;
                         cursor: pointer;
                     }
