@@ -12,7 +12,7 @@ const PlayerItem = ({ item }) => {
                 <strong> {name} </strong>
                 <span> {position} </span>
             </p>
-        </li >
+        </li>
     );
 };
 
