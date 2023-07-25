@@ -58,9 +58,9 @@ const PlayerInfo = memo(() => {
     return (
         <PlayerInfoWrap>
             {selectedItem && <PlayerInfoPopupBg></PlayerInfoPopupBg>}
+            <h2>선수명단</h2>
             <div className="inner">
                 <PlayerInfoBar>
-                    <h3>선수명단</h3>
                     <ul>
                         <li onClick={(e) => onFilterData(e, 1)} className={liNum === 1 ? "on" : ""}>ALL PLAYERS</li>
                         <li onClick={(e) => onFilterData(e, 2)} className={liNum === 2 ? "on" : ""}>FW</li>

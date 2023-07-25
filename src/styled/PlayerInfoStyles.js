@@ -1,11 +1,8 @@
 import styled from 'styled-components';
+import { h2, inner, mainColor, subColor } from './commonStyled';
+import { bg } from './HomeStyled';
 
-const inner = {
-    width: '1400px',
-    margin: 'auto',
-    boxSizing: 'border-box',
-    position: 'relative',
-}
+
 
 export const PlayerInfoWrap = styled.div`
     width: 100%;
@@ -13,7 +10,16 @@ export const PlayerInfoWrap = styled.div`
     position: relative;
     .inner{
         ${inner}
-}
+        padding-top: 100px;
+    }
+    h2{
+        ${h2}
+        ${bg}
+        background-image: url('../../public/images/visual/visual2.jpg');
+        background-position: 0px -100px;
+        padding-top: 180px;
+        text-shadow: 0px 0px 10px #000;
+    }
 `
 
 export const PlayerInfoPopupBg = styled.div`
@@ -26,15 +32,9 @@ export const PlayerInfoPopupBg = styled.div`
 
 export const PlayerInfoBar = styled.div`
     width:100%;
-    border: 1px solid #000;
     position: relative;
-    h3{
-        font-weight:700;
-        font-size:30px; 
-        background-color: #00155D;
-        color:white;
-        padding:20px;
-    }
+    box-sizing: border-box;
+    margin-bottom: 20px;
     ul{
         display: flex;
         li{
@@ -44,10 +44,10 @@ export const PlayerInfoBar = styled.div`
             color:#ccc;
             padding: 10px 20px;
             &:hover{
-                color:#000;
+                color:${subColor};
             }
             &.on{
-                color:#000;
+                color:${subColor};
             }
         }
     }
@@ -55,21 +55,29 @@ export const PlayerInfoBar = styled.div`
         position:absolute;
         right:0;
         bottom:0;
-        transform:translateY(-50%);
         input[type=text]{
-            width: 200px;   
-            height: 22px;
-            vertical-align:middle;
-            border:1px solid #00155D;
+            border: 1px solid ${subColor};
+            padding: 10px 15px;
+            box-sizing: border-box;
+            height: 45px;
+            width: 300px;
+            font-size: 16px;
+            vertical-align: middle;
         }
         button{
-            height: 22px;
-            padding :0 10px;
-            font-size:22px;
-            line-height:22px;
-            vertical-align:middle;
-            color : #00155D;
+            vertical-align: middle;
+            height: 45px;
+            width: 50px;
+            border: none;
+            border: 1px solid ${subColor};
+            background:  ${subColor};
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
         }
+    }
+    .hide{
+        display: none;
     }
 `
 
@@ -97,6 +105,10 @@ export const PlayerList = styled.ul`
         cursor:pointer;
         &:hover{
             border: 1px solid red;
+            text-shadow: none;
+        }
+        &:hover .playerBackno{
+            color: ${mainColor};
         }
         img{
             height: 142px;
@@ -121,6 +133,15 @@ export const PlayerList = styled.ul`
                 font-weight:700;
             }
         }
+        .playerBackno{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size:60px;
+            line-height:60px;
+            text-shadow: 2px 2px 2px gray;
+            color: white;
+        }
     }
 `
 
@@ -138,13 +159,18 @@ export const PlayerItemPopup = styled.div`
         display: block;
     }
     .popupTop{
-        background: #B41B3A;
+        background: ${mainColor};
         color: #fff;
         padding: 20px;
         position: relative;
         span{
             font-weight:700;
             font-size:30px;
+            input[type=text]{
+                height: 30px;
+                vertical-align: middle;
+                font-size:30px;
+            }
         }
         .iconWrap{
             font-size:30px;
@@ -179,10 +205,10 @@ export const PlayerItemPopup = styled.div`
         }
         .popupLeft{
             p{
-                color:#B41B3A;
-                border-bottom: 3px solid #B41B3A;
+                color:${mainColor};
+                border-bottom: 3px solid ${mainColor};
                 input[type=text]{
-                    color:#B41B3A;
+                    color:${mainColor};
                     font-size:16px;
                     font-weight:700;
                 }
@@ -216,7 +242,7 @@ export const PlayerItemPopup = styled.div`
         .popupRight{
             p{
                 color:#00155D;
-                border-bottom: 3px solid #00155D;
+                border-bottom: 3px solid ${subColor};
             }
             dl{
                 display: flex;
@@ -247,8 +273,8 @@ export const PlayerItemPopup = styled.div`
         }
         .popupRight_GK{
             p{
-                color:#00155D;
-                border-bottom: 3px solid #00155D;
+                color:${subColor};
+                border-bottom: 3px solid ${subColor};
             }
             dl{
                 display: flex;
@@ -279,7 +305,7 @@ export const PlayerItemPopup = styled.div`
             }
         }  
         button{
-            background-color: #00155D;
+            background-color: ${subColor};
             height: 40px;
             color:white;
             font-size:16px;

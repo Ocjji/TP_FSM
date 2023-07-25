@@ -7,7 +7,7 @@ import { isSelectPlayer, onDel, onEdit } from './../../store/modules/playerInfoS
 const PlayerInfoPopup = memo(() => {
     const dispatch = useDispatch()
     const { selectedItem } = useSelector(state => state.playerInfo)
-    const { name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, goal, assists, Shot, effectiveShot, playTime } = selectedItem
+    const { backno, name, img, teamNameKor, teamNation, birth, position, height, weight, appearances, goal, assists, Shot, effectiveShot, playTime } = selectedItem
     const deletePlayerData = () => {
         dispatch(onDel(selectedItem))
         dispatch(isSelectPlayer(null))
@@ -18,7 +18,7 @@ const PlayerInfoPopup = memo(() => {
     return (
         <PlayerItemPopup>
             <div className='popupTop'>
-                <span>{name}</span>
+                <span>NO.{backno} - {name}</span>
                 <div className='iconWrap'>
                     <i><AiFillEdit onClick={toggleEditmode} /></i>
                     <i><AiFillDelete onClick={deletePlayerData} /></i>

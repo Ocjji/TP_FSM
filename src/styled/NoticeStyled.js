@@ -31,7 +31,7 @@ export const NoticeWrap = styled.div`
                 select{
                     margin-right: 10px;
                     padding: 10px;
-                    font-size: 18px;
+                    font-size: 16px;
                 }    
                 form{
                     input{
@@ -40,7 +40,7 @@ export const NoticeWrap = styled.div`
                         box-sizing: border-box;
                         height: 45px;
                         width: 300px;
-                        font-size: 18px;
+                        font-size: 16px;
                         vertical-align: middle;
                     }
                     button{

@@ -260,10 +260,15 @@ export const HeaderWrap = styled.div`
             margin: auto;
             position: relative;
             box-sizing: border-box;
+            height: 100%;
             h1{
                 position: absolute;
-                top: 35px;
+                top: 50%;
+                transform: translateY(-50%);
                 left: 0;
+                img{
+                    width: 180px;
+                }
             }
             .top_menu{
                 position: absolute;
@@ -336,7 +341,6 @@ padding: 50px 0px;
     margin:auto;
     box-sizing: border-box;
     position: relative;
-
     .links{
         display: flex;
         justify-content: space-between;
@@ -413,8 +417,12 @@ padding: 50px 0px;
     }
     .logo{
         position: absolute;
-        bottom: 50px;
+        top: 50%;
+        transform: translateY(-50%);
         right: 0;
+        img{
+            width: 150px;
+        }
     }
 }
 `

@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
+  extends: ['airbnb', 'prettier'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
@@ -16,5 +17,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'import/prefer-default-export': 'off',
+    'import/extensions': ['off'],
   },
 }
