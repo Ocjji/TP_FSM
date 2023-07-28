@@ -9,7 +9,24 @@ const initialState = {
     state: null,
     selectedItem: null,
     searchPlayerName: null,
-    playerEditMode: false
+    playerEditMode: false,
+    currentSetData: [
+        { id: 1, backno: null, positionNo: "form334LW", position: "FW" },
+        { id: 2, backno: null, positionNo: "form334ST", position: "FW" },
+        { id: 3, backno: null, positionNo: "form334RW", position: "FW" },
+        { id: 4, backno: null, positionNo: "form334LCM", position: "MF" },
+        { id: 5, backno: null, positionNo: "form334CM", position: "MF" },
+        { id: 6, backno: null, positionNo: "form334RCM", position: "MF" },
+        { id: 7, backno: null, positionNo: "form334LB", position: "DF" },
+        { id: 8, backno: null, positionNo: "form334LCB", position: "DF" },
+        { id: 9, backno: null, positionNo: "form334RCB", position: "DF" },
+        { id: 10, backno: null, positionNo: "form334RB", position: "DF" },
+        { id: 11, backno: null, positionNo: "formGK", position: "GK" },
+    ],
+    current: {},
+    selectPosition: null,
+    selectPositionViewData: [],
+    selectPositionViewD: "",
 }
 export const getPlayerData = createAsyncThunk(
     'player/getPlayerData',
@@ -68,7 +85,24 @@ export const playerInfoSlice = createSlice({
         },
         onSearch(state, action) {
             state.searchPlayerName = action.payload
-        }
+        },
+        onSelectPosition(state, action) {
+            state.selectPosition = action.payload;
+
+            console.log(action.payload);
+            console.log(state.selectPosition);
+        },
+        onAddPosition(state, action) {
+            const changePlayer = state.playerData.find(item => item.backno === Number(action.payload));
+            console.log(changePlayer);
+
+            state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
+                ...item,
+                backno: changePlayer.backno
+            } : item);
+            console.log(action.payload);
+            state.selectPosition = null;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -88,5 +122,5 @@ export const playerInfoSlice = createSlice({
     }
 })
 
-export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer } = playerInfoSlice.actions
+export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition } = playerInfoSlice.actions
 export default playerInfoSlice.reducer

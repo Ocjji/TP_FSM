@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 import { PlayerListStyle } from "../../styled/PlayerList";
 
 const PlayerList = () => {
-    const { playerData, selectPosition } = useSelector(state => state.playerR);
+    const { playerData, selectPosition } = useSelector(state => state.playerInfo);
+
     return (
         <>
             {
@@ -18,9 +19,9 @@ const PlayerList = () => {
                                 <input type="text" name="" id="" placeholder='선수를 검색해주세요' />
                             </div>
                         </div>
-                        <ul>
+                        <ul className="playerSelectList">
                             {
-                                playerData.map(item => <PlayerItem key={item.pid} item={item} />)
+                                playerData.map(item => <PlayerItem key={item.id} item={item} />)
                             }
                         </ul>
                     </div>
