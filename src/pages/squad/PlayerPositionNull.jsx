@@ -7,7 +7,7 @@ const PlayerPositionNull = ({ item }) => {
     const dispatch = useDispatch();
     return (
         <div>
-            <PlayPositionStyle style={{ paddingTop: "20px" }} className={item.positionNo} onClick={() => dispatch(onSelectPosition(item.id))} >
+            <PlayPositionStyle style={{ paddingTop: "20px" }} className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))} >
                 <img src="./images/Squad/emptyPlayer.png" alt="" />
                 <p>
                     <span> </span>

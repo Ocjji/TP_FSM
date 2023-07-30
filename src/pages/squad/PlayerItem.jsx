@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { onAddPosition } from "../../store/modules/playerInfoSlice";
+import { onAddPosition,onViewPlayerDetail } from "../../store/modules/playerInfoSlice";
 const PlayerItem = ({ item }) => {
     const { id, name, position, backno, img } = item;
     const dispatch = useDispatch();
     return (
-        <li onClick={() => dispatch(onAddPosition(item.backno))}>
+        <li onClick={() => dispatch(onViewPlayerDetail(item.backno))}>
             <img src={`./images/player/${img}`} alt="" />
             <p>
                 <span> No. {backno}</span>
