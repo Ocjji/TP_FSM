@@ -23,6 +23,7 @@ import PlayGround from "./pages/squad/PlayGround";
 import PlayerInfo from './pages/playerInfo/PlayerInfo';
 import AddPlayerData from './pages/addPlayerData/AddPlayerData';
 import Cart from './pages/cart/Cart';
+import SquadLayout from "./pages/squad/SquadLayout";
 
 const App = () => {
   return (
@@ -36,7 +37,8 @@ const App = () => {
             <Route index path='/PlayerInfo' element={<PlayerInfo />} />
             <Route path='/addPlayer' element={<AddPlayerData />} />
 
-            <Route path='/squad' element={<PlayGround />} />
+            <Route path='/squad' element={<SquadLayout />} />
+            {/* <Route path='/squad' element={<PlayGround />} /> */}
 
             <Route path='/game_schedule' element={<GameSchedule />} />
 
