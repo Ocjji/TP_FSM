@@ -6,8 +6,8 @@ import { PlayerListStyle } from "../../styled/PlayerList";
 import { onAddPosition } from '../../store/modules/playerInfoSlice';
 
 const PlayerList = () => {
-    const { selectPositionViewData, selectPosition, selectPlayerDetail,selectPositionView } = useSelector(state => state.playerInfo);
-    const {backno,name,birth,position,height,weight,img} = selectPlayerDetail;
+    const { selectPositionViewData, selectPosition, selectPlayerDetail, selectPositionView } = useSelector(state => state.playerInfo);
+    const { backno, name, birth, position, height, weight, img } = selectPlayerDetail;
     const dispatch = useDispatch();
     return (
         <>
@@ -31,7 +31,7 @@ const PlayerList = () => {
                         <div className='pls_right_top'>
                             <h2>선수정보</h2>
                             <div className='btnWrap'>
-                                <button onClick={()=>dispatch(onAddPosition(backno))}>선택</button>
+                                <button onClick={() => dispatch(onAddPosition(backno))}>선택</button>
                             </div>
                         </div>
                         <div className='selectPlayerBox'>

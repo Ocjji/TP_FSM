@@ -2,19 +2,48 @@ import styled from 'styled-components'
 import { inner } from "./commonStyled";
 
 
-export const SquadWrap = styled.div`
-    margin-top: 150px;
+export const SquadWrap = styled.div`    
     .inner{
         ${inner}
         padding-bottom: 100px;
+    }
+    .playlistPopupBG {
+        margin-top: -10px;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 50;
+        background: rgba(0,0,0,0.6);
+    }
+`;
+export const PlayerInfoCalStyle = styled.div`
+
+    &.playerInfoCalculator{
+        /* display: none; */
+        background: #eee;
+        position: fixed;
+        z-index: 10;
+        right: 100px;
+        top: 150px;
+        border: 5px solid #c8193c;
+        border-radius:20px;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 300px;
+        height: 400px;
+
+        strong {
+            display: inline-block;
+            width: 110px;
+        }
     }
 `;
 export const PlayGroundStyle = styled.div`
     width: 920px;
     height: 785px;
-    border: 1px solid #000;
-    background-image: url("./images/Squad/fieldBG_920_785.png");
-    margin: auto;
+    /* border: 1px solid #000; */
+    background-image: url("../../public/images/Squad/fieldBG_920_785.png");
+    margin: 130px auto;
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
@@ -25,14 +54,17 @@ export const PlayPositionStyle = styled.div`
     /* padding-top: 20px; */
     box-sizing: border-box;
     position: absolute;
+    cursor: pointer;
     img {
         width: 120px;
         height: 150px;
         margin: auto;
     }      
     p{
-        margin-top: -5px;
+        /* margin-top: -1px; */
         line-height: 1;
+        color:#fff;
+        font-weight: 500;
     }  
     &.form334LW {
         left: 25%;

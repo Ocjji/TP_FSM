@@ -37,7 +37,7 @@ const App = () => {
             <Route index path='/PlayerInfo' element={<PlayerInfo />} />
             <Route path='/addPlayer' element={<AddPlayerData />} />
 
-            <Route path='/squad' element={<SquadLayout />} />
+            <Route index path='/squad' element={<SquadLayout />} />
             {/* <Route path='/squad' element={<PlayGround />} /> */}
 
             <Route path='/game_schedule' element={<GameSchedule />} />
