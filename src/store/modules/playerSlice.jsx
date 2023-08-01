@@ -21,22 +21,22 @@ export const playerSlice = createSlice({
     name: "player",
     initialState,
     reducers: {
-        onAdd(state, action) {
-            const changePlayer = state.playerData.find(item => item.p_no === Number(action.payload));
-            console.log(changePlayer);
+        // onAdd(state, action) {
+        //     const changePlayer = state.playerData.find(item => item.p_no === Number(action.payload));
+        //     console.log(changePlayer);
 
-            state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
-                ...item,
-                no: changePlayer.p_no
-            } : item);
-            console.log(action.payload);
-            state.selectPosition = null;
-        },
-        onSelectPosition(state, action) {
-            state.selectPosition = action.payload;
-            console.log(action.payload);
-            console.log(state.selectPosition);
-        },
+        //     state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
+        //         ...item,
+        //         no: changePlayer.p_no
+        //     } : item);
+        //     console.log(action.payload);
+        //     state.selectPosition = null;
+        // },
+        // onSelectPosition(state, action) {
+        //     state.selectPosition = action.payload;
+        //     console.log(action.payload);
+        //     console.log(state.selectPosition);
+        // },
     }
 })
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PlayerPosition from "./PlayerPosition";
-import { PlayGroundStyle, SqurdWrap } from "../../styled/PlayGroundStyle";
+import { PlayGroundStyle, SquadWrap } from "../../styled/PlayGroundStyle";
 import { useSelector } from "react-redux";
 import PlayerPositionNull from "./PlayerPositionNull";
 import PlayerList from "./PlayerList";
@@ -9,7 +9,7 @@ import PlayerList from "./PlayerList";
 const PlayGround = () => {
     const { currentSetData } = useSelector(state => state.playerR);
     return (
-        <SqurdWrap className="squrdWrap">
+        <SquadWrap className="squadWrap">
             <PlayGroundStyle className="playground">
                 {
                     currentSetData.map(item => item.no !== null ?
@@ -20,7 +20,7 @@ const PlayGround = () => {
 
             </PlayGroundStyle>
             <PlayerList />
-        </SqurdWrap>
+        </SquadWrap>
     );
 };
 
