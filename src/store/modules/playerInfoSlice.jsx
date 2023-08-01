@@ -28,7 +28,7 @@ const initialState = {
     selectPositionViewData: [],
     selectPositionView: "",
     selectPlayerDetail: {},
-    forUsePlayerData:null,
+    forUsePlayerData: null,
 }
 export const getPlayerData = createAsyncThunk(
     'player/getPlayerData',
@@ -98,13 +98,13 @@ export const playerInfoSlice = createSlice({
             console.log(state.selectPosition);
         },
         onAddPosition(state, action) {
-            const changePlayer = state.playerData.find(item => item.backno === Number(action.payload));
+            const changePlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(changePlayer);
             // 중복 선수 제거
-            state.currentSetData = state.currentSetData.map(item => item.backno === changePlayer.backno ? {
+            state.currentSetData = state.currentSetData.map(item => Number(item.backno) === Number(changePlayer.backno) ? {
                 ...item,
-                backno : null
-            }:item);
+                backno: null
+            } : item);
 
             state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
                 ...item,
@@ -113,18 +113,15 @@ export const playerInfoSlice = createSlice({
             console.log(action.payload);
             state.selectPosition = null;
         },
-        onViewPlayerDetail(state, action){
-            console.log(action.payload,typeof( action.payload)); // backno 받기
-            const onViewPlayer = state.playerData.find(item => item.backno === Number(action.payload));
+        onViewPlayerDetail(state, action) {
+            console.log(action.payload, typeof (action.payload)); // backno 받기
+            const onViewPlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(onViewPlayer);
             state.selectPlayerDetail = onViewPlayer;
-            // 디테일 값 Set
-            // state.forUsePlayerData = [...state.playerData];
-            // state.selectPlayerDetail = state.playerData.find(item => item.backno === Number(action.payload));
-            // console.log(state.selectPlayerDetail);
-            // console.log(state.playerData);
-            // console.log(state.forUsePlayerData);
         },
+        offPopupPlayerList(state, action) {
+            state.selectPosition = null;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -144,5 +141,5 @@ export const playerInfoSlice = createSlice({
     }
 })
 
-export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail } = playerInfoSlice.actions
+export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList } = playerInfoSlice.actions
 export default playerInfoSlice.reducer

@@ -2,18 +2,21 @@ import styled from 'styled-components'
 import { mainColor, subColor } from './commonStyled';
 
 export const PlayerListStyle = styled.div`
+    
     width:1400px;
     /* height: 680px; */
     position: fixed;
-    top: 50%;
+    z-index: 100;
+    top: 150px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
     border: 1px solid #000;
     background-color: white;
     display: flex;
     justify-content:space-between;
     box-sizing: border-box;
     padding:20px;
+    /* margin-top: 200px; */
     .pls_left{
         width:830px;
         height:630px;
