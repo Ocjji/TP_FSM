@@ -47,7 +47,7 @@ export const PlayGroundStyle = styled.div`
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
-    width: 130px;
+    width: 140px;
     height: 175px;
     /* border: 1px solid #000; */
     text-align: center;
@@ -56,15 +56,23 @@ export const PlayPositionStyle = styled.div`
     position: absolute;
     cursor: pointer;
     img {
+        transition:0.2s;
         width: 120px;
         height: 150px;
         margin: auto;
+        &:hover {
+            transform: scale(1.1);
+        }
     }      
     p{
         /* margin-top: -1px; */
-        line-height: 1;
+        line-height: 1.4;
         color:#fff;
         font-weight: 500;
+        strong {
+            display: inline-block;
+            margin: 0 3px 0 3px;
+        }
     }  
     &.form334LW {
         left: 25%;

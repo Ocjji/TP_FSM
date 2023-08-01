@@ -14,7 +14,7 @@ const PlayerPosition = ({ item }) => {
         <PlayPositionStyle className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))}>
             <img src={`./images/player/${img}`} alt="" />
             <p>
-                <span> No. {backno}</span>
+                <span> No. {backno} </span>
                 <strong> {name} </strong>
                 <span> {position} </span>
             </p>
