@@ -18,7 +18,6 @@ const GoodsPopup = () => {
             size: size,
             amount: amount
         })
-        console.log(readyToCart);
     }, [amount, size])
 
     const onPlusAmount = () => {
@@ -49,7 +48,7 @@ const GoodsPopup = () => {
         <GoodsPopupStyle className="goodsPopup" >
             <div className="inner">
                 <div className="goodsDetail">
-                    <button className="btnPopupClose" onClick={() => dispatch(offPopup())}>X</button>
+                    <button className="btnPopupClose" onClick={() => dispatch(offPopup())}>x</button>
                     <div className="goodsLeftImg">
                         <img src={`./images/goods/${img}.${extension}`} alt={name} />
                     </div>

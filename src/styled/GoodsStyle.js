@@ -50,11 +50,22 @@ export const GoodsPopupStyle = styled.div`
             margin-top: 120px;
             display: flex;
             .btnPopupClose{
+                text-align: center;
+                color: #c60027;
+                background-color:#fff;
+                border: 1px solid #cc7586;                
+                font-size: 24px;
+                border-radius: 50%;
                 position: absolute;
                 right: 20px;
                 top: 20px;
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #c60027;
+                color:#fff;
+                }
             }
             .goodsLeftImg {
                 padding: 50px;

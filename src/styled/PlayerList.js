@@ -40,6 +40,7 @@ export const PlayerListStyle = styled.div`
         ul{
             padding: 20px;
             display: flex;
+            flex-wrap: wrap;
             li {
                 width: 150px;
                 height: 200px;
