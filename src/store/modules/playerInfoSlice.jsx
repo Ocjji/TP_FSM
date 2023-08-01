@@ -98,10 +98,10 @@ export const playerInfoSlice = createSlice({
             console.log(state.selectPosition);
         },
         onAddPosition(state, action) {
-            const changePlayer = state.playerData.find(item => item.backno === Number(action.payload));
+            const changePlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(changePlayer);
             // 중복 선수 제거
-            state.currentSetData = state.currentSetData.map(item => item.backno === changePlayer.backno ? {
+            state.currentSetData = state.currentSetData.map(item => Number(item.backno) === Number(changePlayer.backno) ? {
                 ...item,
                 backno: null
             } : item);
@@ -115,7 +115,7 @@ export const playerInfoSlice = createSlice({
         },
         onViewPlayerDetail(state, action) {
             console.log(action.payload, typeof (action.payload)); // backno 받기
-            const onViewPlayer = state.playerData.find(item => item.backno === Number(action.payload));
+            const onViewPlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(onViewPlayer);
             state.selectPlayerDetail = onViewPlayer;
         },
