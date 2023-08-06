@@ -276,8 +276,23 @@ export const HeaderWrap = styled.div`
                 right: 0;
                 a{
                     margin-left: 10px;
+                    position:relative;
                     i{
                         color: #fff;
+                    }
+                    span{
+                        background: #fff;
+                        border-radius: 50%;
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        top: -5px;
+                        right: -8px;
+                        text-align: center;
+                        line-height: 15px;
+                        font-size: 11px;
+                        display: block;
+                        color: ${subColor};
                     }
                 }
             }

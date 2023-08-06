@@ -1,25 +1,31 @@
 import styled from 'styled-components'
-import { subColor } from './commonStyled'
-const inner = {
-    width: '1400px',
-    margin: 'auto',
-    boxSizing: 'border-box',
-    position: 'relative',
-}
+import { button, buttonText, h2, inner, subColor } from './commonStyled'
+import { bg } from './HomeStyled'
 
 export const AddPlayerWrap = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
+    h2{
+        ${h2}
+        ${bg}
+        background-image: url('../../public/images/visual/visual1.jpg');
+        padding-top: 180px;
+        text-shadow: 0px 0px 10px #000;
+    }
     .inner{
         ${inner}
+        padding-top: 50px;
         .btnWrap{
             text-align:right;
             button{
-                font-size:16px;
-                padding: 5px 20px;
+                ${button}
+                width: 400px;
                 background: ${subColor};
-                color:white;
+                span{
+                    ${buttonText}
+
+                }
             }
         }
     }
