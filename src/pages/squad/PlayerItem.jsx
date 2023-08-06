@@ -8,9 +8,9 @@ const PlayerItem = ({ item }) => {
         <li onClick={() => dispatch(onViewPlayerDetail(item.backno))}>
             <img src={`./images/player/${img}`} alt="" />
             <p>
-                <span> No. {backno}</span>
+                <span> No. <em>{backno}</em></span>
                 <strong> {name} </strong>
-                <span> {position} </span>
+                {/* <span> {position} </span> */}
             </p>
         </li>
     );

@@ -39,6 +39,9 @@ const NoticeDetail = () => {
                             <td className='th'>조회수</td>
                             <td>{view}</td>
                         </tr>
+                        <tr>
+                            <td colSpan={4}>스쿼드메이커불러오기</td>
+                        </tr>
                         <tr >
                             <td colSpan={4}>{content}</td>
                         </tr>
