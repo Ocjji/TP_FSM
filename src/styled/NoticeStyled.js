@@ -162,10 +162,6 @@ export const NoticeDetailWrap = styled.div`
             ${button}
             width: 200px;
             background: ${subColor};
-            /* width: 100px;
-            height:40px;
-            border: none;
-            color: #fff; */
             &.editBtn{
                 background: ${mainColor};
                 margin: 0px 20px;

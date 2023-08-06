@@ -17,10 +17,11 @@ export const SquadWrap = styled.div`
         justify-content: space-between;
     }
     .playlistPopupBG {
-        margin-top: -10px;
         width: 100%;
         height: 100%;
         position: fixed;
+        top: 0;
+        left: 0;
         z-index: 50;
         background: rgba(0,0,0,0.6);
     }
