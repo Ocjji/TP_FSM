@@ -200,7 +200,7 @@ export const JoinWrap = styled.div`
         table{
             .w1{width: 200px;}
             .w2{width:1200px;}
-            .w700{width:700px;}
+            .w700{width:500px;}
             .w400{width:400px;}
             .w230{width:230px;}
             .w200{width:150px;}
@@ -210,6 +210,10 @@ export const JoinWrap = styled.div`
                     border-top: 1px solid #333;
                 }
                 border-bottom: 1px solid #ccc;
+                .message{
+                    padding-left: 20px;
+                    display: inline-block;
+                }
                 td{
                     padding: 30px 20px;
                     input{
@@ -322,4 +326,66 @@ export const JoinWrap = styled.div`
     }
 
 
+`
+
+
+export const MypageStyle = styled.div`
+    h2{
+        ${h2}
+        color: #000;
+    }
+    .inner{
+        ${inner}
+    }
+    table{
+        margin-top: 100px;
+        box-shadow: 0px 0px 10px 2px #ddd;
+        width: 100%;
+        .w1{width:20%}
+        .w2{width:20%}
+        .w3{width:auto}
+        
+        h3{
+            
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            /* border: 1px solid #000; */
+        }
+        tbody{
+            tr{
+
+                td{
+                    padding: 10px 0px;
+
+                }
+                &.firstTr{
+                    td{
+                        padding-top: 50px;
+
+                    }
+                }
+                &.lastTr{
+                    td{
+                        padding-bottom: 50px;
+    
+                    }
+
+                }
+            }
+
+        }
+    }
+    p{
+        margin-top: 50px;
+        text-align: end;
+        button{
+            ${button}
+            width: 200px;
+            background: ${subColor};
+            a{
+                ${buttonText}
+            }
+        }
+    }
 `
