@@ -45,6 +45,12 @@ export const PlayerListStyle = styled.div`
             display: flex;
             flex-wrap: wrap;
             li {
+                &:hover {
+                    img {
+                        transform:scale(1.1);
+                    }
+                }
+                cursor: pointer;
                 width: 150px;
                 height: 200px;
                 border: 1px solid #000;
@@ -53,6 +59,7 @@ export const PlayerListStyle = styled.div`
                 box-sizing: border-box;
                 margin: 5px;
                 img{
+                    transition:0.2s;
                     width: 100px;
                     height: 100px;
                     border: 1px solid #000;
