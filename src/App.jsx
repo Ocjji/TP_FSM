@@ -18,12 +18,13 @@ import NoticeDetail from './pages/notice/NoticeDetail';
 import NoticeAdd from './pages/notice/NoticeAdd';
 import NoticeEdit from './pages/notice/NoticeEdit';
 
-import PlayGround from "./pages/squad/PlayGround";
+// import PlayGround from "./pages/squad/PlayGround";
 
 import PlayerInfo from './pages/playerInfo/PlayerInfo';
 import AddPlayerData from './pages/addPlayerData/AddPlayerData';
 import Cart from './pages/cart/Cart';
 import SquadLayout from "./pages/squad/SquadLayout";
+import NoticeAddSauad from './pages/notice/NoticeAddSauad';
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
               <Route index element={<Notice />} />
               <Route path=':noticeID' element={<NoticeDetail />} />
               <Route path='writing' element={<NoticeAdd />} />
+              <Route path='writing/squad' element={<NoticeAddSauad />} />
               <Route path='edit' element={<NoticeEdit />} />
             </Route>
 

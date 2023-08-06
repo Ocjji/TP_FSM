@@ -11,7 +11,7 @@ export const h2 = {
     fontSize: '50px',
     textAlign: 'center',
     fontWeight: 700,
-    borderBottom: '1px solid #999',
+    // borderBottom: '1px solid #999',
     height: '400px',
     paddingTop: '225px',
     color: '#fff',
@@ -34,5 +34,7 @@ export const buttonText = {
     transform: 'skew(20deg)',
     fontSize: '16px',
     fontWeight: 600,
-    color: '#fff'
+    color: '#fff',
+    height:'55px',
+    lineHeight:'55px'
 }

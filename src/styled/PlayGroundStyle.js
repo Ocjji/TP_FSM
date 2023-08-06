@@ -1,11 +1,20 @@
 import styled from 'styled-components'
-import { inner } from "./commonStyled";
+import { button, buttonText, h2, inner, mainColor, subColor } from "./commonStyled";
+import { bg } from './HomeStyled';
 
 
 export const SquadWrap = styled.div`    
+    .h2bg{
+        ${h2}
+        ${bg}
+        background-position: 0px -80px;
+        background-image: url('../../public/images/visual/visual4.jpg');
+    }
     .inner{
         ${inner}
-        padding-bottom: 100px;
+        padding-top: 100px;
+        display: flex;
+        justify-content: space-between;
     }
     .playlistPopupBG {
         margin-top: -10px;
@@ -17,24 +26,47 @@ export const SquadWrap = styled.div`
     }
 `;
 export const PlayerInfoCalStyle = styled.div`
-
-    &.playerInfoCalculator{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    .playerInfoCalculator{
         /* display: none; */
-        background: #eee;
-        position: fixed;
-        z-index: 10;
-        right: 100px;
-        top: 150px;
-        border: 5px solid #c8193c;
-        border-radius:20px;
-        padding: 20px;
+        /* position: fixed; */
+        /* z-index: 10; */
+        /* right: 100px; */
+        /* top: 150px; */
+        /* border-radius:20px; */
+        /* background: ${subColor}; */
+        border-top: 5px solid ${subColor};
+        border-bottom: 5px solid ${subColor};
+        /* padding: 20px; */
         box-sizing: border-box;
         width: 300px;
-        height: 400px;
-
-        strong {
-            display: inline-block;
-            width: 110px;
+        height: 500px;
+        .squad-info, .cal-wrap{
+            border-bottom: 1px solid  ${subColor};
+            padding: 20px;
+        }
+        .personnel{
+            padding: 20px;
+        }
+        p{
+            padding: 10px 0px;
+            strong {
+                display: inline-block;
+                width: 150px;
+            }
+            span{font-weight:700}
+        }
+    }
+    .btnWrap{
+        button{
+            ${button}
+            width: 100%;  
+            background: ${mainColor};
+            a{
+                ${buttonText}
+            }
         }
     }
 `;
@@ -43,7 +75,6 @@ export const PlayGroundStyle = styled.div`
     height: 785px;
     /* border: 1px solid #000; */
     background-image: url("../../public/images/Squad/fieldBG_920_785.png");
-    margin: 130px auto;
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
@@ -75,58 +106,58 @@ export const PlayPositionStyle = styled.div`
         }
     }  
     &.form334LW {
-        left: 25%;
-        top: 5%;
+        left: 27%;
+        top: 2%;
         transform: translateX(-50%);
     }    
     &.form334ST {
         left: 50%;
-        top: 2%;
+        top: 0%;
         transform: translateX(-50%);
     }  
     &.form334RW {
-        left: 75%;
-        top: 5%;
+        left: 73%;
+        top: 2%;
         transform: translateX(-50%);
     }  
     &.form334LCM {
-        left: 30%;
-        top: 28%;
+        left: 28%;
+        top: 27%;
         transform: translateX(-50%);
     }  
     &.form334CM {
         left: 50%;
-        top: 28%;
+        top: 25%;
         transform: translateX(-50%);
     }  
     &.form334RCM {
-        left: 70%;
-        top: 28%;
+        left: 72%;
+        top: 27%;
         transform: translateX(-50%);
     }  
     &.form334LB {
-        left: 20%;
+        left: 18%;
         top: 52%;
         transform: translateX(-50%);
     }  
     &.form334LCB {
-        left: 40%;
+        left: 39%;
         top: 52%;
         transform: translateX(-50%);
     }  
     &.form334RCB {
-        left: 60%;
+        left: 61%;
         top: 52%;
         transform: translateX(-50%);
     }  
     &.form334RB {
-        left: 80%;
+        left: 82%;
         top: 52%;
         transform: translateX(-50%);
     }  
     &.formGK {
         left: 50%;
-        bottom: 2%;
+        bottom: 3%;
         transform: translateX(-50%);
     } 
 `;

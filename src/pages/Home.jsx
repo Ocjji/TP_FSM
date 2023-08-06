@@ -18,7 +18,7 @@ const Home = () => {
         <HomeWrap>
             <div className='visual1'>
                 <div className="inner">
-                    <p><Link to={'/squad'}><strong>Squad Maker</strong><i className='xi-long-arrow-right'></i></Link></p>
+                    <p onClick={goUp}><Link to={'/squad'}><strong>Squad Maker</strong><i className='xi-long-arrow-right'></i></Link></p>
 
                 </div>
             </div>
