@@ -5,7 +5,7 @@ import { offPopup, onAddCart } from "../../store/modules/goodsSlice";
 
 const GoodsPopup = () => {
     const { popupData } = useSelector(state => state.goodsR);
-    const { id, img, brand, name, price, extension, discount } = popupData;
+    const { id, img, brand, name, price, extension, discount, category1 } = popupData;
     const [amount, setAmount] = useState(1);
     const [size, setSize] = useState("");
     const [readyToCart, setReadyToCart] = useState(popupData);
@@ -40,7 +40,10 @@ const GoodsPopup = () => {
         // }, 1000);
     }
     const onAdd = () => {
-        if (!size) { alert("사이즈를 선택해주세요"); return }
+        if (category1 === "wears") {
+            if (!size) { alert("사이즈를 선택해주세요"); return }
+        }
+
         dispatch(onAddCart(readyToCart));
         // addSuccessPopup();
     }
@@ -79,20 +82,28 @@ const GoodsPopup = () => {
                                 </dd>
                             </dl>
                         </div>
+
+
                         <div className="select-size">
                             <dl className="size">
-                                <dt>옵션</dt>
-                                <dd>
-                                    <select name="" id="" onChange={(e) => sizeChange(e)}>
-                                        <option value="">옵션선택</option>
-                                        <option value="S(95)">S(95)</option>
-                                        <option value="M(100)">M(100)</option>
-                                        <option value="L(105)">L(105)</option>
-                                        <option value="XL(110)">XL(110)</option>
-                                    </select>
-                                </dd>
+                                <dt>사이즈</dt>
+                                {
+                                    category1 === "wears" ?
+                                        (
+                                            <dd>
+                                                <select name="" id="" onChange={(e) => sizeChange(e)}>
+                                                    <option value="">사이즈선택</option>
+                                                    <option value="S(95)">S(95)</option>
+                                                    <option value="M(100)">M(100)</option>
+                                                    <option value="L(105)">L(105)</option>
+                                                    <option value="XL(110)">XL(110)</option>
+                                                </select>
+                                            </dd>
+                                        ) : "사이즈를 선택할 수 없는 상품입니다."
+                                }
                             </dl>
                         </div>
+
                         <div className="totalPrice-amount">
                             <dl className="amount">
                                 <dt>{size ? `${size}` : ""}</dt>
