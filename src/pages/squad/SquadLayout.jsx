@@ -10,14 +10,15 @@ import PlayerInfoCal from "./PlayerInfoCal";
 const SquadLayout = () => {
     const { currentSetData, selectPosition } = useSelector(state => state.playerInfo);
     const dispatch = useDispatch();
+    window.scrollY
     return (
         <SquadWrap className="squadWrap">
+            <h2 className='h2bg'>Squad Maker</h2>
             {
                 selectPosition &&
                 <div className="playlistPopupBG" onClick={() => dispatch(offPopupPlayerList())}></div>
             }
             <PlayerList />
-            <PlayerInfoCal />
             <div className="inner">
                 <PlayGroundStyle className="playGround">
                     {
@@ -25,8 +26,9 @@ const SquadLayout = () => {
                             <PlayerPosition key={item.id} item={item} />
                             :
                             <PlayerPositionNull key={item.id} item={item} />)
-                    }
+                        }
                 </PlayGroundStyle>
+                <PlayerInfoCal />
             </div>
         </SquadWrap>
     );

@@ -34,5 +34,7 @@ export const buttonText = {
     transform: 'skew(20deg)',
     fontSize: '16px',
     fontWeight: 600,
-    color: '#fff'
+    color: '#fff',
+    height:'55px',
+    lineHeight:'55px'
 }

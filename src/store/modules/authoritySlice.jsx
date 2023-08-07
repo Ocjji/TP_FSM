@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user:[{id:1, userName:'김하진', userId:'', userPw:''}]
+    user:[],
+    currentUser:{id:1, userName:'김하진', userId:'hajeans', userPw:'1234', userEmail:'hajin@naver.com', userPhone:'010-123-123'}
+
 }
 
 export const authoritySlice = createSlice({

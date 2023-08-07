@@ -4,13 +4,14 @@ import { HeaderWrap } from './../styled/HomeStyled';
 import { AiOutlineGlobal } from 'react-icons/ai'
 import { BsCart3 } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { resetCurrentPerPosts } from '../store/modules/newsSlice';
 const Header = () => {
     // const [headerFixed, setHeaderFixed] = useState(false)
     // window.addEventListener('scroll',e=>{
     //         setHeaderFixed(window.scrollY>50)
     // })
+    const { cart } = useSelector(state => state.goodsR);
     const dispatch = useDispatch()
     const goUp = () => {
         window.scrollTo({ top: 0 })
@@ -26,7 +27,7 @@ const Header = () => {
 
                     <div className="top_menu">
                         <Link to={'/'} onClick={goUp}><i><AiOutlineGlobal /></i></Link>
-                        <Link to={'/cart'} onClick={goUp}><i><BsCart3 /></i></Link>
+                        <Link to={'/cart'} onClick={goUp}><i><BsCart3 /></i><span>{cart.length}</span></Link>
                         <Link to={'/login'} onClick={goUp}><i><BiUser /></i></Link>
                     </div>
 

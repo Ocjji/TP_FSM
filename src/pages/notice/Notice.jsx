@@ -79,7 +79,7 @@ const Notice = () => {
                     </table>
                 </div>
                 <p className='writeBtn'>
-                    <button><Link to={'/notice/writing'}>글쓰기</Link> </button>
+                    <button onClick={()=>window.scrollTo({ top: 0 })}><Link to={'/notice/writing'}>글쓰기</Link> </button>
                 </p>
                 <div className='pagingBox'>
                     <i onClick={()=>{setCurrentPage(1), clickLink()}}><AiOutlineDoubleLeft/></i>

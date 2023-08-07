@@ -99,17 +99,88 @@ const JoinForm = () => {
             setEmailAddr('')
         }
     }
+    
 
-    // const [id,setId] = useState('')
-    // const [name,setName] = useState('')
-    // const [password,setPassword] = useState('')
-    // const [pwConfirm,setPwConfirm] = useState('')
-    // const [email,setEmail] = useState('')
-    // const [phone,setPhone] = useState('')
-    // const [birth,setBirth] = useState('')
-    const [user,setUser] = useState(
-        {id:''}
-    )
+    const [id,setId] = useState('')
+    const [name,setName] = useState('')
+    const [password,setPassword] = useState('')
+    const [passwordConfirm,setPasswordConfirm] = useState('')
+    const [email,setEmail] = useState('')
+    const [phone,setPhone] = useState({num1:'', num2:'', num3:''})
+    const [birth,setBirth] = useState('')
+    console.log(phone)
+    
+    // 오류메세지 상태 저장
+    const [idMessage, setIdMessage] = useState("");
+    const [passwordMessage, setPasswordMessage] = useState("");
+    const [passwordConfirmMessage, setPasswordConfirmMessage] = useState("");
+    const [emailMessage, setEmailMessage] = useState("");
+    // 유효성 검사
+    const [isId, setIsId] = useState(false);
+    const [isPassword, setIsPassword] = useState(false);
+    const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
+    const [isEmail, setIsEmail] = useState(false);
+    const onChangeId = (e) => {
+        const currentId = e.target.value;
+        setId(currentId);
+        const idRegExp = /^[a-zA-z0-9]{4,12}$/;
+     
+        if (!idRegExp.test(currentId)) {
+          setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요!");
+          setIsId(false);
+        } else {
+          setIdMessage("사용가능한 아이디 입니다.");
+          setIsId(true);
+        }
+      };
+      const onChangePassword = (e) => {
+        const currentPassword = e.target.value;
+        setPassword(currentPassword);
+        const passwordRegExp =
+          /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+        if (!passwordRegExp.test(currentPassword)) {
+          setPasswordMessage(
+            "숫자+영문자+특수문자 조합으로 8~25자리 이상 입력해주세요!"
+          );
+          setIsPassword(false);
+        } else {
+          setPasswordMessage("안전한 비밀번호 입니다.");
+          setIsPassword(true);
+        }
+      };
+      const onChangePasswordConfirm = (e) => {
+        const currentPasswordConfirm = e.target.value;
+        setPasswordConfirm(currentPasswordConfirm);
+        if (password !== currentPasswordConfirm) {
+          setPasswordConfirmMessage("비밀번호가 동일하지 않습니다!");
+          setIsPasswordConfirm(false);
+        } else {
+          setPasswordConfirmMessage("똑같은 비밀번호를 입력했습니다.");
+          setIsPasswordConfirm(true);
+        }
+      };
+      const onChangeEmail = (e) => {
+        const currentEmail = e.target.value;
+        setEmail(currentEmail);
+        const emailRegExp =
+          /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+     
+        if (!emailRegExp.test(currentEmail)) {
+          setEmailMessage("이메일의 형식이 올바르지 않습니다!");
+          setIsEmail(false);
+        } else {
+          setEmailMessage("사용 가능한 이메일 입니다.");
+          setIsEmail(true);
+        }
+      };
+      const onChangePhone =(e,no)=>{
+
+        if(e.target.value >= 0 && e.target.value<=9999){
+            setPhone({...phone, [`num${no}`]:e.target.value})
+
+        }
+        
+      }
     return (
         <JoinWrap>
             <h2>회원가입</h2>
@@ -126,23 +197,41 @@ const JoinForm = () => {
                         <tbody>
                             <tr>
                                 <td><label htmlFor="userId"><b>*</b>아이디</label></td>
-                                <td><input type="text" id='userId' placeholder='영소문자/숫자, 4~16자리' required className='w700' value={id} /></td>
+                                <td>
+                                    <input type="text" id='userId' placeholder='대소문자/숫자, 4~12자리' required className='w700'
+                                     value={id} onChange={onChangeId}/>
+                                    <p className="message"> {idMessage} </p>
+                                </td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userPw"><b>*</b>비밀번호</label> </td>
-                                <td><input type="password" id='userPw' className='w700' placeholder='영문대소문자, 숫자, 특수문자( ~!#()-_+ )만 사용가능합니다.' required/></td>
+                                <td>
+                                    <input type="password" id='userPw' className='w700' placeholder='숫자+영문자+특수문자 8~25자리' required
+                                     value={password} onChange={onChangePassword}/>
+                                    <p className="message">{passwordMessage}</p>    
+                                </td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userPw2"><b>*</b>비밀번호 확인</label> </td>
-                                <td><input type="password" id='userPw2' placeholder='비밀번호를 재입력' required className='w700' /></td>
+                                <td>
+                                    <input type="password" id='userPw2' placeholder='비밀번호를 재입력' required className='w700'
+                                     value={passwordConfirm} onChange={onChangePasswordConfirm}/>
+                                    <p className="message">{passwordConfirmMessage}</p>
+                                </td>
                             </tr>
                             <tr>
                                 <td><label htmlFor='userName'><b>*</b>이름</label></td>
-                                <td><input type='text' id='userName'  required className='w700'/></td>
+                                <td><input type='text' id='userName'  required className='w700'
+                                value={name} onChange={(e)=>setName(e.target.value)}/></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="userEmail"><b>*</b>이메일</label></td>
                                 <td>
+                                    <input type="email" id="userEmail" required className="w700" value={email} onChange={onChangeEmail}/>
+                                    <p className="message">{emailMessage}</p>
+                                </td>
+                            </tr>
+                            {/* <td>
                                     <input type="email" id="userEmail" required className="w400" />
                                     <span>@</span>
                                     <input type="email" className="w230" value={emailAddr} onChange={emailInput}/>
@@ -152,12 +241,12 @@ const JoinForm = () => {
                                         <option value='gmail.com'>gmail.com</option>
                                         <option value='hanmail.net'>hanmail.net</option>
                                     </select>
-                                </td>
-                            </tr>
+                                </td> */}
                             <tr>
                                 <td><label htmlFor="userTel"><b>*</b>휴대폰번호</label> </td>
                                 <td className='telSelect'>
-                                    <select name="" id="userTel" title='선택'>
+                                    <select name="" id="userTel" title='선택' onChange={e=>setPhone({...phone, num1:e.target.value})}>
+                                        <option value="">선택</option>
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
@@ -166,9 +255,9 @@ const JoinForm = () => {
                                         <option value="019">019</option>
                                     </select>
                                     <span>-</span>
-                                    <input type="text" required className='w200'/>
+                                    <input type="text" required className='w200' value={phone.num2} onChange={(e)=>onChangePhone(e,2)}/>
                                     <span>-</span>
-                                    <input type="text" required className='w200'/>
+                                    <input type="text" required className='w200'value={phone.num3} onChange={(e)=>onChangePhone(e,3)}/>
                                     <button type='button'>본인인증</button>    
                                 </td>
                             </tr>
@@ -181,7 +270,7 @@ const JoinForm = () => {
                                     <label htmlFor="woman">여자</label>
                                 </td>
                             </tr>
-                            <tr>
+                            {/* <tr>
                                 <td><label htmlFor="userBirth">생년월일</label> </td>
                                 <td className='birthSelect'>
                                     <p>
@@ -206,8 +295,8 @@ const JoinForm = () => {
 
                                     </p>
                                 </td>
-                            </tr>
-                            <tr>
+                            </tr> */}
+                            {/* <tr>
                                 <td><label htmlFor="userAddr">주소</label></td>
                                 <td className='addInput'>
                                     <input type="text" id="sample4_postcode" placeholder="우편번호" className='w200'/>
@@ -218,7 +307,7 @@ const JoinForm = () => {
                                     <input type="text" id="sample4_detailAddress" placeholder="상세주소" className='w400'/>
                                     <input type="text" id="sample4_extraAddress" placeholder="참고항목" className='w500'/>
                                 </td>
-                            </tr>
+                            </tr> */}
                             <tr>
                                 <td>개인정보 유효기간</td>
                                 <td className='expiration'>

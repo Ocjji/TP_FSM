@@ -84,7 +84,9 @@ export const goodsSlice = createSlice({
             localStorage.setItem('cart', JSON.stringify(state.cart))
         },
         onDelCartSelectedItem(state, action) {
-            state.cart = state.cart.filter(item => item.id !== action.payload)
+            state.cart = state.cart.filter(item => !(item.id === action.payload.id && item.size === action.payload.size))
+            console.log(action.payload.id);
+            console.log(action.payload.size);
             localStorage.setItem('cart', JSON.stringify(state.cart))
         },
         onDelCartAllItem(state, action) {

@@ -296,7 +296,7 @@ export const PlayerItemPopup = styled.div`
                     }
                     }
                         
-                    &:nth-child(6){width:100px;}         
+                    &:nth-child(6){width:100px;}        
                     input[type=text]{
                         width: 30px;
                         font-size:16px;

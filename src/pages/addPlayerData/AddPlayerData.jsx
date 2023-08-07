@@ -4,7 +4,7 @@ import { AddPlayerInfoText, AddPlayerWrap } from './../../styled/AddPlayerStyles
 import { onAdd } from './../../store/modules/playerInfoSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { PlayerInfoBar } from './../../styled/PlayerInfoStyles';
+// import { PlayerInfoBar } from './../../styled/PlayerInfoStyles';
 
 const AddPlayerData = memo(() => {
     const { playerData } = useSelector(state => state.playerInfo)
@@ -50,10 +50,11 @@ const AddPlayerData = memo(() => {
     }
     return (
         <AddPlayerWrap>
+            <h2>선수추가</h2>
             <div className="inner">
-                <PlayerInfoBar>
+                {/* <PlayerInfoBar>
                     <h3>선수추가</h3>
-                </PlayerInfoBar>
+                </PlayerInfoBar> */}
                 <form onSubmit={(e) => onSubmit(e)}>
                     <AddPlayerInfoText>
                         <div className='addPlayerInfoLeft'>
@@ -125,7 +126,7 @@ const AddPlayerData = memo(() => {
                         </div>
                     </AddPlayerInfoText>
                     <div className='btnWrap'>
-                        <button type='submit'>추가</button>
+                        <button type='submit'><span>추가</span></button>
                     </div>
                 </form>
             </div>

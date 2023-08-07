@@ -5,7 +5,8 @@ import { changeAmount, onDelCartSelectedItem } from '../../store/modules/goodsSl
 import { AiOutlineClose } from 'react-icons/ai';
 
 const CartItem = memo(({ item, index }) => {
-    const { id, amount, brand, name, discount, img, extension, price, soldout, size } = item
+    console.log(item);
+    const { id, amount, brand, name, discount, img, extension, price, soldout, size, category1 } = item
     const dispatch = useDispatch()
     const onPlusAmount = () => {
         if (amount < 10) {
@@ -27,7 +28,10 @@ const CartItem = memo(({ item, index }) => {
             <div className='cartTextBox'>
                 <span>{brand}</span>
                 <span>{name}</span>
-                <span>옵션명 : {size}</span>
+                {/* 옵션명이 있을때만 출력하기 */}
+                {
+                    category1 === "wears" && <span>옵션명 : {size}</span>
+                }
                 <span>배송비 3,000원 | 택배</span>
                 {
                     discount &&
@@ -48,7 +52,7 @@ const CartItem = memo(({ item, index }) => {
                     <button onClick={onPlusAmount}>+</button>
                 </AmountWrap>
             </div>
-            <i onClick={() => dispatch(onDelCartSelectedItem(id))}><AiOutlineClose /></i>
+            <i onClick={() => dispatch(onDelCartSelectedItem({ id, size }))}><AiOutlineClose /></i>
         </CartItemBox>
     );
 });

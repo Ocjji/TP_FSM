@@ -53,6 +53,7 @@ const PlayerInfo = memo(() => {
     const navigate = useNavigate()
     const goPage = () => {
         navigate('/addPlayer')
+        window.scrollTo({top:0})
     }
 
     return (
