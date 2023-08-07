@@ -5,7 +5,7 @@ import { changeAmount, onDelCartSelectedItem } from '../../store/modules/goodsSl
 import { AiOutlineClose } from 'react-icons/ai';
 
 const CartItem = memo(({ item, index }) => {
-    console.log(item);
+    // console.log(item);
     const { id, amount, brand, name, discount, img, extension, price, soldout, size, category1 } = item
     const dispatch = useDispatch()
     const onPlusAmount = () => {

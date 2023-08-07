@@ -17,6 +17,7 @@ const Header = () => {
         window.scrollTo({ top: 0 })
     }
     const location = useLocation()
+    const cartTotal = cart.reduce((acc,curr)=>acc+curr.amount,0)
     return (
         <HeaderWrap>
             {/* <div className={`header ${headerFixed ? 'on' : ''}`}> */}
@@ -27,7 +28,7 @@ const Header = () => {
 
                     <div className="top_menu">
                         <Link to={'/'} onClick={goUp}><i><AiOutlineGlobal /></i></Link>
-                        <Link to={'/cart'} onClick={goUp}><i><BsCart3 /></i><span>{cart.length}</span></Link>
+                        <Link to={'/cart'} onClick={goUp}><i><BsCart3 /></i><span>{cartTotal}</span></Link>
                         <Link to={'/login'} onClick={goUp}><i><BiUser /></i></Link>
                     </div>
 
