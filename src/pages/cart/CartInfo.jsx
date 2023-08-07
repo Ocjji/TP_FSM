@@ -12,6 +12,7 @@ const CartInfo = memo(({ onMenuClick }) => {
     const orderCost = cart.reduce((accumulator, currentItem) => {
         return accumulator + (currentItem.price * currentItem.amount) - (currentItem.price * currentItem.amount) * currentItem.discount * 0.01;
     }, 0);
+    
     const totalPrice = cart.length * deliveryCost + orderCost
     const navigate = useNavigate()
     const goto = () => {
@@ -26,6 +27,7 @@ const CartInfo = memo(({ onMenuClick }) => {
         }
         else alert('취소되었습니다.')
     }
+    console.log(cart)
     return (
         <>
             <div className='cartInfo'>

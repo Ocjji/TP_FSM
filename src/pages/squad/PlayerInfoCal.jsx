@@ -8,11 +8,11 @@ const PlayerInfoCal = () => {
     const [avgHeight, setHeight] = useState(0);
     const [avgWeight, setWeight] = useState(0);
     const [avgAge, setAge] = useState(0);
-
+    // console.log(currentSetData)
     let convertData = currentSetData.filter(item => item.backno !== null);
     convertData = convertData.map(item => playerData.find(player => player.backno === item.backno));
 
-    console.log(convertData);
+    // console.log(convertData);
 
     useEffect(() => {
         const playerNum = convertData.length;
@@ -36,15 +36,15 @@ const PlayerInfoCal = () => {
                     <p><strong>평균 몸무게</strong> <span>{avgWeight}</span></p>
                     <p><strong>평균 나이</strong> <span>{avgAge}</span></p>
                 </div>
-                <div className='squad-info'>
+                {/* <div className='squad-info'>
                 <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
                 <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
                 <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
                 <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
                     
-                </div>
+                </div> */}
                 <div className='personnel'>
-                    <p><strong>선수 인원</strong><span>0</span> / 11</p>
+                    <p><strong>선수 인원</strong><span>{convertData.length}</span> / 11</p>
                 </div>
             </div>
             <p className='btnWrap'>
