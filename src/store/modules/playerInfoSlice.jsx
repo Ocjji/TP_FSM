@@ -98,6 +98,14 @@ export const playerInfoSlice = createSlice({
             console.log(state.selectPosition);
         },
         onAddPosition(state, action) {
+            if (!action.payload) {
+                state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
+                    ...item,
+                    backno: null
+                } : item);
+                state.selectPosition = null;
+                return
+            }
             const changePlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(changePlayer);
             // 중복 선수 제거

@@ -3,7 +3,7 @@ import { PlayPositionStyle } from "../../styled/PlayGroundStyle";
 import { useDispatch, useSelector } from "react-redux";
 import { onSelectPosition } from "../../store/modules/playerInfoSlice";
 
-const PlayerPosition = ({ item }) => {
+const PlayerPositionOnBoard = ({ item }) => {
     const { id, backno, positionNo } = item;
     const { playerData, selectPosition } = useSelector(state => state.playerInfo);
     const pickPlayer = playerData.find(item => item.backno === backno);
@@ -11,8 +11,8 @@ const PlayerPosition = ({ item }) => {
     const dispatch = useDispatch();
 
     return (
-        <PlayPositionStyle className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))}>
-            <img src={`../images/player/${img}`} alt="" className="imgHover" />
+        <PlayPositionStyle className={`${item.positionNo} onBoard`} >
+            <img src={`../../images/player/${img}`} alt="" />
             <p>
                 <span> No. {backno} </span>
                 <strong> {name} </strong>
@@ -22,4 +22,4 @@ const PlayerPosition = ({ item }) => {
     );
 };
 
-export default PlayerPosition;
+export default PlayerPositionOnBoard;

@@ -1,4 +1,4 @@
-import {styled} from 'styled-components'
+import { styled } from 'styled-components'
 import { bg } from './HomeStyled';
 import { button, buttonText, h2, inner, mainColor, subColor } from './commonStyled';
 
@@ -186,13 +186,31 @@ export const NoticeAddForm = styled.div`
     }
     form{
         width: 100%;
-        p{
+        .squadBox {
+            margin-top: 30px;
+            display: block;
+            line-height: 1.4;
+            color:#fff;
+            font-weight: 500;
+            span {
+                text-indent: 0;
+                padding-top: 0;
+            }
+            strong {
+                display: inline-block;
+                margin: 0 3px 0 3px;
+                border: none;
+                color:#fff;
+            }
+        }
+        p{            
             strong{
                 display: inline-block;
                 border: 1px solid #888;
                 width: 150px;
                 color: #999;
             }
+
             select, input, textarea,strong{
                 font-size: 16px;
                 padding: 10px 20px;
@@ -235,6 +253,7 @@ export const NoticeAddForm = styled.div`
                     }
                 }
             }
+            
         }
     }
 `

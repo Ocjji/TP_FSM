@@ -16,6 +16,10 @@ export const SquadWrap = styled.div`
         display: flex;
         justify-content: space-between;
     }
+    &.onBoard{
+        width: 920px;
+        margin: auto;
+    }
     .playlistPopupBG {
         width: 100%;
         height: 100%;
@@ -79,6 +83,7 @@ export const PlayGroundStyle = styled.div`
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
+    
     width: 140px;
     height: 175px;
     /* border: 1px solid #000; */
@@ -92,10 +97,15 @@ export const PlayPositionStyle = styled.div`
         width: 120px;
         height: 150px;
         margin: auto;
-        &:hover {
-            transform: scale(1.1);
-        }
+        &.imgHover{
+            &:hover {
+                transform: scale(1.1);
+            }
+        }        
     }      
+    &.onBoard{
+        cursor: auto; 
+    }
     p{
         /* margin-top: -1px; */
         line-height: 1.4;
