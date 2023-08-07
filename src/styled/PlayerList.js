@@ -18,12 +18,29 @@ export const PlayerListStyle = styled.div`
     padding:60px 20px 20px;
     /* margin-top: 200px; */
     .closeBtn{
-        cursor: pointer;
+        /* cursor: pointer;
         position: absolute;
         top: 15px; right: 20px;
         font-size: 30px;
         background: transparent;
-        border: none;
+        border: none; */
+        text-align: center;
+        color: #c60027;
+        background-color:#fff;
+        border: 1px solid #cc7586;                
+        font-size: 24px;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        line-height: 0px;
+        cursor: pointer;
+        &:hover {
+            background-color: #c60027;
+            color:#fff;
+        }
     }
     .pls_left{
         width:830px;
@@ -120,6 +137,12 @@ export const PlayerListStyle = styled.div`
                     color: ${subColor};
                     width: 80px;
                     font-weight: 500;
+                    color: ${subColor};
+                    font-weight: 700;
+                    &:hover{
+                        background: ${mainColor};
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -140,24 +163,50 @@ export const PlayerListStyle = styled.div`
                 }
             }
             .selectinfo{
+                p:first-child{
+                    border-top: 2px solid ${subColor};
+                    padding: 20px 10px 10px;
+                    box-sizing: border-box;
+                }
                 margin-top: 10px;
                 overflow: auto;
                 height: 280px;
-                border-top: 1px solid #eee;
-                border-bottom: 1px solid #eee;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
                 padding: 20px;
                 box-sizing: border-box;
                 .popupRight_GK{
-                    border-top: 2px solid ${subColor};
+                    /* border-top: 2px solid ${subColor}; */
                     margin-top: 10px;
                     padding-top: 10px;
+                    font-weight: 500;
+                    font-size: 18px;
+                    p:first-child{
+                        padding: 15px 0px 10px;
+                        font-weight: 700;
+                        font-size: 18px;
+                        border-bottom: 1px solid #ccc;
+                        margin-bottom: 10px;
+                    }
                 }
                 p{
-                    padding-bottom: 5px;
-                }
-                span{
-                    display: inline-block;
-                    width: 100px;
+
+                    padding: 0px 10px 10px;
+                    box-sizing: border-box;
+                    span{
+                        display: inline-block;
+                        width: 150px;
+                    }
+                    strong{
+                        font-weight: 700;
+                        color: ${subColor};
+                        width: 80px;
+                        display: inline-block;
+                        font-size: 18px;
+                    }
+                    b{
+                        color: ${mainColor};
+                    }
                 }
             }
         }

@@ -15,7 +15,8 @@ export const h2 = {
     height: '400px',
     paddingTop: '225px',
     color: '#fff',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    textShadow:' 0px 0px 10px #000'
 }
 
 export const mainColor = '#e6002d'
