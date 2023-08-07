@@ -3,7 +3,7 @@ import PlayerItem from "./PlayerItem";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useDispatch, useSelector } from "react-redux";
 import { PlayerListStyle } from "../../styled/PlayerList";
-import { onAddPosition } from '../../store/modules/playerInfoSlice';
+import { offPopupPlayerList, onAddPosition } from '../../store/modules/playerInfoSlice';
 
 const PlayerList = () => {
     const { selectPositionViewData, selectPosition, selectPlayerDetail, selectPositionView } = useSelector(state => state.playerInfo);
@@ -15,7 +15,7 @@ const PlayerList = () => {
             {
                 selectPosition &&
                 <PlayerListStyle>
-                    <button className='closeBtn'><i><AiOutlineCloseCircle /></i></button>
+                    <button className='closeBtn' onClick={() => dispatch(offPopupPlayerList())}><i><AiOutlineCloseCircle /></i></button>
                     <div className='pls_left'>
                         <div className='pls_left_top'>
                             <h3>{selectPositionView}</h3>

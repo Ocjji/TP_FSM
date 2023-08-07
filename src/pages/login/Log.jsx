@@ -22,7 +22,7 @@ const Log = () => {
 
                     <form onSubmit={onSubmit} className='login'>
                         <input type="text" value={userID} name='userID' onChange={changeInput} placeholder='아이디'/>
-                        <input type="text" value={userPW} name='userPW' onChange={changeInput} placeholder='비밀번호'/>
+                        <input type="password" value={userPW} name='userPW' onChange={changeInput} placeholder='비밀번호'/>
                         <button type='submit'><span>로그인</span></button>
                     </form>
                     <p className='findBtn'><span onClick={()=>setUserFind(1)}>아이디 찾기</span><span onClick={()=>setUserFind(2)}>비밀번호 찾기</span><span onClick={()=>navigate('/join')}>회원가입</span></p>
