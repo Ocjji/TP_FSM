@@ -6,9 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import PlayerList from "./PlayerList";
 import { getPlayerData, offPopupPlayerList } from "../../store/modules/playerInfoSlice";
 import PlayerInfoCal from "./PlayerInfoCal";
+import PlayerPositionOnBoard from "./PlayerPositionOnBoard";
+import PlayerPositionNullOnBoard from "./PlayerPositionNullOnBoard";
 
-const SquadLayout = () => {
+const SquadOnBoard = ({squad}) => {
     const { currentSetData, selectPosition, loading } = useSelector(state => state.playerInfo);
+    const {id, backno, positionNo, position}= squad;
     const dispatch = useDispatch();
     window.scrollY
     useEffect(() => {
@@ -16,28 +19,28 @@ const SquadLayout = () => {
         else {
             JSON.parse(localStorage.getItem('playerData'));
         }
-    }, [loading])
+    }, [loading]);
     return (
-        <SquadWrap className="squadWrap">
-            <h2 className='h2bg'>Squad Maker</h2>
+        <SquadWrap className="squadWrap onBoard">
+            {/* <h2 className='h2bg'>Squad Maker</h2> */}
             {
-                selectPosition &&
-                <div className="playlistPopupBG" onClick={() => dispatch(offPopupPlayerList())}></div>
+                // selectPosition &&
+                // <div className="playlistPopupBG" onClick={() => dispatch(offPopupPlayerList())}></div>
             }
-            <PlayerList />
-            <div className="inner">
+            {/* <PlayerList /> */}
+            <div className="squadboardinner">
                 <PlayGroundStyle className="playGround">
                     {
-                        currentSetData.map(item => item.backno !== null ?
-                            <PlayerPosition key={item.id} item={item} />
+                        squad.map(item => item.backno !== null ?
+                            <PlayerPositionOnBoard key={item.id} item={item} />
                             :
-                            <PlayerPositionNull key={item.id} item={item} />)
+                            <PlayerPositionNullOnBoard key={item.id} item={item} />)
                     }
                 </PlayGroundStyle>
-                <PlayerInfoCal />
+                {/* <PlayerInfoCal /> */}
             </div>
-        </SquadWrap>
+        </SquadWrap >
     );
 };
 
-export default SquadLayout;
+export default SquadOnBoard;
