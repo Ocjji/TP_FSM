@@ -12,7 +12,7 @@ const NoticeDetail = () => {
 
     const { data } = useSelector(state => state.noticeR)
     const currentDate = data.find(item => item.id === Number(noticeID))
-    const { id, categoryName, title, userName, date, view, content } = currentDate
+    const { id, categoryName, title, userName, date, view, content, squad } = currentDate
     return (
         <NoticeDetailWrap>
             <div className="inner">
@@ -43,7 +43,7 @@ const NoticeDetail = () => {
                         <tr>
                             <td colSpan={4}>
                                 {/* 스쿼드메이커 불러오기 */}
-                                {/* <SquadOnBoard /> */}
+                                {squad && <SquadOnBoard squad={squad}/>}
                             </td>
                         </tr>
                         <tr >

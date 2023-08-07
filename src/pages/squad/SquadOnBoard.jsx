@@ -9,8 +9,9 @@ import PlayerInfoCal from "./PlayerInfoCal";
 import PlayerPositionOnBoard from "./PlayerPositionOnBoard";
 import PlayerPositionNullOnBoard from "./PlayerPositionNullOnBoard";
 
-const SquadOnBoard = () => {
+const SquadOnBoard = ({squad}) => {
     const { currentSetData, selectPosition, loading } = useSelector(state => state.playerInfo);
+    const {id, backno, positionNo, position}= squad;
     const dispatch = useDispatch();
     window.scrollY
     useEffect(() => {
@@ -30,7 +31,7 @@ const SquadOnBoard = () => {
             <div className="squadboardinner">
                 <PlayGroundStyle className="playGround">
                     {
-                        currentSetData.map(item => item.backno !== null ?
+                        squad.map(item => item.backno !== null ?
                             <PlayerPositionOnBoard key={item.id} item={item} />
                             :
                             <PlayerPositionNullOnBoard key={item.id} item={item} />)

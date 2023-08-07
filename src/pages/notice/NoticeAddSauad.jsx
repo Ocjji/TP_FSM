@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { NoticeAddForm } from '../../styled/NoticeStyled';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { onAdd } from '../../store/modules/noticeSlice';
 import PlayerPosition from '../squad/PlayerPosition';
 import SquadOnBoard from "../squad/SquadOnBoard";
@@ -20,7 +20,7 @@ const NoticeAddSauad = () => {
     const d = now.getDate()
     const changeInput = e => {
         const { value, name } = e.target
-        setUserWrite({ ...userWrite, [name]: value, date: `${y}.${m}.${d}` })
+        setUserWrite({ ...userWrite, [name]: value, date: `${y}.${m}.${d}`,squad:currentSetData })
     }
     const changeSelect = e => {
         //     const {value} = e.target
@@ -49,6 +49,7 @@ const NoticeAddSauad = () => {
             navigate('/notice')
         }
     }
+    const { currentSetData } = useSelector(state => state.playerInfo);
     return (
         <NoticeAddForm>
             <div className="inner">
@@ -64,7 +65,7 @@ const NoticeAddSauad = () => {
                     </p>
                     <div className="squadBox">
                         {/* 스쿼드메이커 불러오기 */}
-                        <SquadOnBoard />
+                        <SquadOnBoard squad={currentSetData}/>
                     </div>
                     <p className='contentBox'>
                         <textarea rows={30} placeholder='내용을 입력해주세요.' value={content} name='content' onChange={changeInput} ref={contentRef} />

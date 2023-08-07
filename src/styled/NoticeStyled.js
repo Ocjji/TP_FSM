@@ -193,13 +193,13 @@ export const NoticeAddForm = styled.div`
             color:#fff;
             font-weight: 500;
             span {
-                text-indent: 0;
-                padding-top: 0;
+                display: inline;               
             }
             strong {
-                display: inline-block;
+                display: inline;
                 margin: 0 3px 0 3px;
                 border: none;
+                padding: 0;
                 color:#fff;
             }
         }
