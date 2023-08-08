@@ -1,3 +1,5 @@
+// 페이지 미적용 파일입니다.
+
 import React from 'react';
 import PlayerPosition from "./PlayerPosition";
 import { PlayGroundStyle, SquadWrap } from "../../styled/PlayGroundStyle";
