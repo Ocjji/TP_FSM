@@ -27,7 +27,6 @@ export const goodsSlice = createSlice({
         onGoodsPopup(state, action) {
             state.isGoodsPopup = true;
             state.popupData = goodsData.find(item => item.id === Number(action.payload));
-            // console.log(state.popupData);
         },
         offPopup(state, action) {
             state.isGoodsPopup = false;
