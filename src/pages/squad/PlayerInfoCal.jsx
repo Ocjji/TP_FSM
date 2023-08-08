@@ -8,14 +8,14 @@ const PlayerInfoCal = () => {
     const [avgHeight, setHeight] = useState(0);
     const [avgWeight, setWeight] = useState(0);
     const [avgAge, setAge] = useState(0);
-
+    // console.log(currentSetData)
     let convertData = currentSetData.filter(item => item.backno !== null);
     convertData = convertData.map(item => playerData.find(player => player.backno === item.backno));
 
-    console.log(convertData);
+    // console.log(convertData);
 
+    const playerNum = convertData.length;
     useEffect(() => {
-        const playerNum = convertData.length;
         if (playerNum !== 0) {
             setHeight((convertData.reduce((acc, cur) =>
                 acc + cur.height, 0) / playerNum).toFixed(0));
@@ -32,23 +32,22 @@ const PlayerInfoCal = () => {
         <PlayerInfoCalStyle>
             <div className="playerInfoCalculator">
                 <div className="cal-wrap">
-                    <p><strong>평균 신장</strong> <span>{avgHeight}</span></p>
-                    <p><strong>평균 몸무게</strong> <span>{avgWeight}</span></p>
-                    <p><strong>평균 나이</strong> <span>{avgAge}</span></p>
+                    <p><strong>평균 신장</strong> <span>{avgHeight} cm</span></p>
+                    <p><strong>평균 몸무게</strong> <span>{avgWeight} kg</span></p>
+                    <p><strong>평균 나이</strong> <span>{avgAge} 세</span></p>
                 </div>
-                <div className='squad-info'>
-                <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
-                <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
-                <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
-                <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
-                    
-                </div>
+                {/* <div className='squad-info'>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                </div> */}
                 <div className='personnel'>
-                    <p><strong>선수 인원</strong><span>0</span> / 11</p>
+                    <p><strong>선수 인원</strong><span>{playerNum}</span> / 11</p>
                 </div>
             </div>
             <p className='btnWrap'>
-                <button onClick={()=>window.scrollTo({ top: 0 })}><Link to={'/notice/writing/squad'}>게시글 작성</Link></button>
+                <button onClick={() => window.scrollTo({ top: 0 })}><Link to={'/notice/writing/squad'}>게시글 작성</Link></button>
             </p>
         </PlayerInfoCalStyle>
     );

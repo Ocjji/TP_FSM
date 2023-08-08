@@ -7,14 +7,19 @@ export const SquadWrap = styled.div`
     .h2bg{
         ${h2}
         ${bg}
-        background-position: 0px -80px;
+        background-position: 0 -80px;
         background-image: url('../../public/images/visual/visual4.jpg');
+        padding-top:200px;
     }
     .inner{
         ${inner}
         padding-top: 100px;
         display: flex;
         justify-content: space-between;
+    }
+    &.onBoard{
+        width: 920px;
+        margin: auto;
     }
     .playlistPopupBG {
         width: 100%;
@@ -43,7 +48,7 @@ export const PlayerInfoCalStyle = styled.div`
         /* padding: 20px; */
         box-sizing: border-box;
         width: 300px;
-        height: 500px;
+        height: 280px;
         .squad-info, .cal-wrap{
             border-bottom: 1px solid  ${subColor};
             padding: 20px;
@@ -57,7 +62,10 @@ export const PlayerInfoCalStyle = styled.div`
                 display: inline-block;
                 width: 150px;
             }
-            span{font-weight:700}
+            span{
+                font-weight:700;
+                font-size: 18px;
+            }
         }
     }
     .btnWrap{
@@ -79,6 +87,7 @@ export const PlayGroundStyle = styled.div`
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
+    
     width: 140px;
     height: 175px;
     /* border: 1px solid #000; */
@@ -92,10 +101,15 @@ export const PlayPositionStyle = styled.div`
         width: 120px;
         height: 150px;
         margin: auto;
-        &:hover {
-            transform: scale(1.1);
-        }
+        &.imgHover{
+            &:hover {
+                transform: scale(1.1);
+            }
+        }        
     }      
+    &.onBoard{
+        cursor: auto; 
+    }
     p{
         /* margin-top: -1px; */
         line-height: 1.4;

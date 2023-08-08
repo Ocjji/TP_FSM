@@ -3,12 +3,12 @@ import { PlayPositionStyle } from "../../styled/PlayGroundStyle";
 import { useDispatch } from "react-redux";
 import { onSelectPosition } from "../../store/modules/playerInfoSlice";
 
-const PlayerPositionNull = ({ item }) => {
+const PlayerPositionNullOnBoard = ({ item }) => {
     const dispatch = useDispatch();
     return (
         <div>
-            <PlayPositionStyle style={{ paddingTop: "20px" }} className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))} >
-                <img src="../images/Squad/emptyPlayer.png" alt="" className="imgHover" />
+            <PlayPositionStyle style={{ paddingTop: "20px" }} className={`${item.positionNo} onBoard`} >
+                <img src="../../images/Squad/emptyPlayer.png" alt="" />
                 <p>
                     <span> </span>
                     <strong>  </strong>
@@ -19,4 +19,4 @@ const PlayerPositionNull = ({ item }) => {
     );
 };
 
-export default PlayerPositionNull;
+export default PlayerPositionNullOnBoard;

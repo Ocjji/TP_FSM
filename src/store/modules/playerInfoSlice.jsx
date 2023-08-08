@@ -98,6 +98,14 @@ export const playerInfoSlice = createSlice({
             console.log(state.selectPosition);
         },
         onAddPosition(state, action) {
+            if (!action.payload) {
+                state.currentSetData = state.currentSetData.map(item => item.id === state.selectPosition ? {
+                    ...item,
+                    backno: null
+                } : item);
+                state.selectPosition = null;
+                return
+            }
             const changePlayer = state.playerData.find(item => Number(item.backno) === Number(action.payload));
             console.log(changePlayer);
             // 중복 선수 제거
@@ -121,7 +129,15 @@ export const playerInfoSlice = createSlice({
         },
         offPopupPlayerList(state, action) {
             state.selectPosition = null;
-        }
+        },
+        onListSearch(state, action) {
+            if(!action.payload){
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+            }else {
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+            state.selectPositionViewData = state.selectPositionViewData.filter(item => item.name.includes(action.payload));
+            }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -141,5 +157,5 @@ export const playerInfoSlice = createSlice({
     }
 })
 
-export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList } = playerInfoSlice.actions
+export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList,onListSearch } = playerInfoSlice.actions
 export default playerInfoSlice.reducer
