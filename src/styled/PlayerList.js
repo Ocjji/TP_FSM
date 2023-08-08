@@ -87,10 +87,10 @@ export const PlayerListStyle = styled.div`
                     padding-top: 10px;
                     box-sizing: border-box;
                     margin-bottom: 20px;
-                    margin-right: 18px;
+                    margin-right: 30px;
                     /* margin: 5px; */
                    &:nth-child(5n){
-                    margin-right: 0px;
+                    /* margin-right: 0px; */
                    }
                     img{
                         transition:0.2s;

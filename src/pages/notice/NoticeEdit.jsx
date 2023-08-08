@@ -3,6 +3,7 @@ import { NoticeAddForm } from '../../styled/NoticeStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { onUpdate } from '../../store/modules/noticeSlice';
+import SquadOnBoard from '../squad/SquadOnBoard';
 
 const NoticeEdit = () => {
     const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const NoticeEdit = () => {
     const contentRef = useRef()
     const { editData } = useSelector(state => state.noticeR);
     const [userEdit, setUserEdit] = useState(editData)
-    const {id, title, content, category,categoryName} = userEdit
+    const {id, title, content, category,categoryName,squad} = userEdit
 
     console.log(editData)
 
@@ -65,6 +66,10 @@ const NoticeEdit = () => {
                         </select> */}
                         <input type="text" placeholder='제목을 입력해 주세요.' value={title} name='title' onChange={changeInput} ref={titleRef}/>
                     </p>
+                    <div className="squadBox">
+                        {/* 스쿼드메이커 불러오기 */}
+                        {squad && <SquadOnBoard squad={squad}/>}
+                    </div>
                     <p className='contentBox'>
                         <textarea rows={30} placeholder='내용을 입력해주세요.' value={content} name='content' onChange={changeInput} ref={contentRef}/>
                     </p>
