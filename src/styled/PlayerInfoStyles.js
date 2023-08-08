@@ -111,6 +111,7 @@ export const PlayerList = styled.ul`
             color: ${mainColor};
         }
         img{
+            width: 106px;
             height: 142px;
         }
         .playerBasic{
@@ -156,6 +157,7 @@ export const PlayerItemPopup = styled.div`
     z-index:10;
     img{
         width: 300px;
+        height: 400px;
         display: block;
     }
     .popupTop{

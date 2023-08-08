@@ -110,11 +110,11 @@ const AddPlayerData = memo(() => {
                                         <label htmlFor="">도움</label>
                                         <input type="text" value={assists} onChange={(e) => setAssists(e.target.value)} />
                                         <label htmlFor="">슈팅</label>
-                                        <input type="text" value={playTime} onChange={(e) => setPlayTime(e.target.value)} />
-                                        <label htmlFor="">유효슈팅</label>
                                         <input type="text" value={Shot} onChange={(e) => setShot(e.target.value)} />
-                                        <label htmlFor="">출장시간</label>
+                                        <label htmlFor="">유효슈팅</label>
                                         <input type="text" value={effectiveShot} onChange={(e) => setEffectiveShot(e.target.value)} />
+                                        <label htmlFor="">출장시간</label>
+                                        <input type="text" value={playTime} onChange={(e) => setPlayTime(e.target.value)} />
                                         <div>
                                             <label htmlFor="">현역선수 여부</label>
                                             <input type="radio" name="activePlayer" id="activePlayerTrue" value='true' onChange={activePlayerChange} checked={activePlayer === true} />현역
