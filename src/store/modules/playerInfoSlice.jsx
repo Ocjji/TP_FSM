@@ -129,7 +129,15 @@ export const playerInfoSlice = createSlice({
         },
         offPopupPlayerList(state, action) {
             state.selectPosition = null;
-        }
+        },
+        onListSearch(state, action) {
+            if(!action.payload){
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+            }else {
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+            state.selectPositionViewData = state.selectPositionViewData.filter(item => item.name.includes(action.payload));
+            }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -149,5 +157,5 @@ export const playerInfoSlice = createSlice({
     }
 })
 
-export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList } = playerInfoSlice.actions
+export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList,onListSearch } = playerInfoSlice.actions
 export default playerInfoSlice.reducer
