@@ -55,7 +55,17 @@ export const PlayerListStyle = styled.div`
             font-size:24px;
             justify-content:space-between;
             padding:0 20px;
-            box-sizing: border-box;      
+            box-sizing: border-box;
+            position: relative;
+            span{
+                line-height: 1.8;
+                display: inline;
+                position: absolute;
+                font-size: 12px;
+                right: 50px;
+                bottom: 0;
+                font-weight: 200;
+            }    
             .searchWrap{
                 input[type=text]{
                     width:300px;
@@ -73,6 +83,20 @@ export const PlayerListStyle = styled.div`
                 padding: 20px;
                 display: flex;
                 flex-wrap: wrap;
+                button {
+                    width: 150px;
+                    height: 35px;
+                    line-height: 35px;
+                    font-size: 20px;
+                    margin-left: 10px;
+                    background: #fff;
+                    border: 1px solid #999;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #c60027;
+                        color:#fff;
+                    }
+                }
                 li {
                     &:hover {
                         img {
@@ -105,8 +129,7 @@ export const PlayerListStyle = styled.div`
                             font-weight: 600;
                             color: #2b6fb3;
                         }
-                        em{
-                            
+                        em{                            
                             color: ${mainColor};
                         }
                     }
@@ -139,6 +162,7 @@ export const PlayerListStyle = styled.div`
                     font-weight: 500;
                     color: ${subColor};
                     font-weight: 700;
+                    cursor: pointer;
                     &:hover{
                         background: ${mainColor};
                         color: #fff;
