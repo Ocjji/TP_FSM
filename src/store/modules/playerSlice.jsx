@@ -1,3 +1,5 @@
+// 페이지 미적용 파일입니다.
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

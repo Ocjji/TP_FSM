@@ -69,6 +69,15 @@ export const PlayerInfoCalStyle = styled.div`
         }
     }
     .btnWrap{
+        .squadReset{
+            ${button}
+            background: ${subColor};
+            width: 100%;
+            margin-bottom: 30px;
+            a{
+                ${buttonText}
+            }
+        }
         button{
             ${button}
             width: 100%;  
@@ -127,8 +136,8 @@ export const PlayPositionStyle = styled.div`
     }    
     &.form334ST {
         left: 50%;
-        top: 0%;
-        transform: translateX(-50%);
+        top: -1%;
+        transform: translate(-50%);
     }  
     &.form334RW {
         left: 73%;
@@ -142,7 +151,7 @@ export const PlayPositionStyle = styled.div`
     }  
     &.form334CM {
         left: 50%;
-        top: 25%;
+        top: 26.5%;
         transform: translateX(-50%);
     }  
     &.form334RCM {

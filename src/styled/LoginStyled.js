@@ -6,6 +6,7 @@ export const LoginWrap = styled.div`
         h2{
             ${h2}
             color: #000;
+            text-shadow: 0px 0px 0px #fff;
         }
         .login{
             text-align: center;
@@ -173,6 +174,7 @@ export const JoinWrap = styled.div`
     h2{
         ${h2}
         color: #000;
+        text-shadow: 0px 0px 0px #fff;
     }
     .inner{
         ${inner}
@@ -333,6 +335,7 @@ export const MypageStyle = styled.div`
     h2{
         ${h2}
         color: #000;
+        text-shadow: 0px 0px 0px #fff;
     }
     .inner{
         ${inner}

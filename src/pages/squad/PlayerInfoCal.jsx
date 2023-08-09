@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PlayerInfoCalStyle } from "../../styled/PlayGroundStyle";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import { onSquadReset } from '../../store/modules/playerInfoSlice';
 
 const PlayerInfoCal = () => {
     const { currentSetData, playerData } = useSelector(state => state.playerInfo);
@@ -12,6 +13,7 @@ const PlayerInfoCal = () => {
     let convertData = currentSetData.filter(item => item.backno !== null);
     convertData = convertData.map(item => playerData.find(player => player.backno === item.backno));
 
+    const dispatch = useDispatch();
     // console.log(convertData);
 
     const playerNum = convertData.length;
@@ -47,6 +49,7 @@ const PlayerInfoCal = () => {
                 </div>
             </div>
             <p className='btnWrap'>
+                <button className="squadReset" onClick={() => dispatch(onSquadReset())}><Link to="">스쿼드 초기화</Link></button>
                 <button onClick={() => window.scrollTo({ top: 0 })}><Link to={'/notice/writing/squad'}>게시글 작성</Link></button>
             </p>
         </PlayerInfoCalStyle>

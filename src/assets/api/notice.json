@@ -10,8 +10,8 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목1","userName":"김영주", "date": "2023.07.10", "view":"23", "content":"제목9"},
-    {"id":2, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"제목2","userName":"강동준", "date": "2023.07.11", "view":"18", "content":"내용2"},
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"내가만든 스쿼드 구경하러와","userName":"김영주", "date": "2023.07.10", "view":"23", "content":"이정도는 짜줘야지"},
+    {"id":2, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"갓승민 화이팅","userName":"강동준", "date": "2023.07.11", "view":"18", "content":"손흥민선수 항상 응원합니다"},
     {"id":3, "category":"my_squad", "categoryName":"나만의 스쿼드", "squad":[
         {"id":1,"backno":19, "positionNo": "form334LW", "position": "FW" },
     {"id":2,"backno":9, "positionNo": "form334ST", "position": "FW" },
@@ -23,7 +23,7 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목3","userName":"임주형", "date": "2023.07.12", "view":"21", "content":"내용3"},
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"내가만든 스쿼드","userName":"임주형", "date": "2023.07.12", "view":"21", "content":"내 스쿼드 최고"},
     {"id":4, "category":"my_squad", "categoryName":"나만의 스쿼드", "squad":[
         {"id":1,"backno":19, "positionNo": "form334LW", "position": "FW" },
     {"id":2,"backno":9, "positionNo": "form334ST", "position": "FW" },
@@ -35,9 +35,9 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목4","userName":"최선우", "date": "2023.07.12", "view":"7", "content":"내용4"},
-    {"id":5, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"제목5","userName":"김영주", "date": "2023.07.13", "view":"13", "content":"내용5"},
-    {"id":6, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"제목6","userName":"강동준", "date": "2023.07.15", "view":"10", "content":"내용6"},
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"이것봐봐","userName":"최선우", "date": "2023.07.12", "view":"7", "content":"이정도는 짜줘야지"},
+    {"id":5, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"조규성 짱 멋있다","userName":"김영주", "date": "2023.07.13", "view":"13", "content":"얼굴도 잘생기고 축구도 잘하네"},
+    {"id":6, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"김승규 잘한다","userName":"강동준", "date": "2023.07.15", "view":"10", "content":"김승규 골 완전 잘 막네"},
     {"id":7, "category":"my_squad", "categoryName":"나만의 스쿼드", "squad":[
         {"id":1,"backno":19, "positionNo": "form334LW", "position": "FW" },
     {"id":2,"backno":9, "positionNo": "form334ST", "position": "FW" },
@@ -49,7 +49,7 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목7","userName":"임주형", "date": "2023.07.17", "view":"9", "content":"내용7"},
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"이건 이길수밖에 없는 스쿼드다","userName":"임주형", "date": "2023.07.17", "view":"9", "content":"내 스쿼드 최고"},
     {"id":8, "category":"my_squad", "categoryName":"나만의 스쿼드", "squad":[
         {"id":1,"backno":19, "positionNo": "form334LW", "position": "FW" },
     {"id":2,"backno":9, "positionNo": "form334ST", "position": "FW" },
@@ -61,8 +61,8 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목8","userName":"김영주", "date": "2023.07.19", "view":"7", "content":"내용8"},
-    {"id":9, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"제목9","userName":"최선우", "date": "2023.07.20", "view":"3", "content":"내용9"},
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"다들 구경하러와","userName":"김영주", "date": "2023.07.19", "view":"7", "content":"이정도는 짜줘야지"},
+    {"id":9, "category":"free_board", "categoryName":"자유게시판", "squad":null, "title":"우리나라 축구선수 화이팅","userName":"최선우", "date": "2023.07.20", "view":"3", "content":"항상 응원합니다"},
     {"id":10, "category":"my_squad", "categoryName":"나만의 스쿼드", "squad":[
         {"id":1,"backno":19, "positionNo": "form334LW", "position": "FW" },
     {"id":2,"backno":9, "positionNo": "form334ST", "position": "FW" },
@@ -74,5 +74,5 @@
     {"id":8,"backno":2, "positionNo": "form334LCB", "position": "DF"},
     {"id":9,"backno":22, "positionNo": "form334RCB", "position": "DF"},
     {"id":10,"backno":4, "positionNo": "form334RB", "position": "DF" },
-    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"제목10","userName":"임주형", "date": "2023.07.20", "view":"2", "content":"내용10"}
+    {"id":11,"backno":1, "positionNo": "formGK", "position": "GK"    }], "title":"내 스쿼드가 제일 좋다","userName":"임주형", "date": "2023.07.20", "view":"2", "content":"내 스쿼드 최고"}
 ]
