@@ -10,7 +10,7 @@ const PlayerPositionOnBoard = ({ item }) => {
 
     return (
         <PlayPositionStyle className={`${item.positionNo} onBoard`} >
-            <img src={`../../images/player/${img}`} alt="" />
+            <img src={`./images/player/${img}`} alt="" />
             <p>
                 <span> No. {backno} </span>
                 <strong> {name} </strong>

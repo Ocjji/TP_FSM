@@ -28,7 +28,7 @@ export const HomeWrap = styled.div`
     .visual1{
         margin-top: 120px;
         ${bg}
-        background-image: url('../../public/images/visual/visual5.jpg');
+        background-image: url('./images/visual/visual5.jpg');
         .inner{
             ${inner}
             height: 900px;
@@ -218,7 +218,7 @@ export const HomeWrap = styled.div`
     .visual3{
         ${bg}
         width: 100%;
-        background-image: url('../../public/images/visual/playstore.png');
+        background-image: url('./images/visual/playstore.png');
         .inner{
             ${inner}
             height: 600px;

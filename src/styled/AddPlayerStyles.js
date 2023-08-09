@@ -9,7 +9,7 @@ export const AddPlayerWrap = styled.div`
     h2{
         ${h2}
         ${bg}
-        background-image: url('../../public/images/visual/visual1.jpg');
+        background-image: url('./images/visual/visual1.jpg');
         padding-top: 180px;
         text-shadow: 0px 0px 10px #000;
     }
