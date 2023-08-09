@@ -36,6 +36,7 @@ const EditPlayerInfoItem = memo(() => {
         dispatch(onEdit(selectedItem))
         dispatch(isSelectPlayer(null))
     }
+    const hasHttp = img.includes('http');
     return (
         <PlayerItemPopup>
             <div className='popupTop'>
@@ -46,7 +47,9 @@ const EditPlayerInfoItem = memo(() => {
             </div>
             {/* <form className='popupMain' > */}
             <form className='popupMain' onSubmit={onSubmit} >
-                <img src={`./images/player/${img}`} alt="" />
+                {
+                    hasHttp ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" />
+                }
                 <div className='popupContent'>
                     <div className="popupLeft">
                         <p>
