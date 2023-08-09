@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, HashRouter } from "react-router-dom";
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import GlobalStyle from './styled/GlobalStyle';
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
@@ -64,7 +64,7 @@ const App = () => {
             <Route path='/join' element={<JoinForm />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };
