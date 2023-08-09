@@ -17,7 +17,8 @@ const Header = () => {
         window.scrollTo({ top: 0 })
     }
     const location = useLocation()
-    const cartTotal = cart.reduce((acc,curr)=>acc+curr.amount,0)
+    // const cartTotal = cart.reduce((acc,curr)=>acc+curr.amount,0)
+    const cartTotal = cart.length;
     return (
         <HeaderWrap>
             {/* <div className={`header ${headerFixed ? 'on' : ''}`}> */}

@@ -15,6 +15,8 @@ const PlayerInfoPopup = memo(() => {
     const toggleEditmode = () => {
         dispatch(onEdit(selectedItem))
     }
+    const hasHttp = img.includes('http');
+    console.log(hasHttp);
     return (
         <PlayerItemPopup>
             <div className='popupTop'>
@@ -26,7 +28,9 @@ const PlayerInfoPopup = memo(() => {
                 </div>
             </div>
             <div className='popupMain'>
-                <img src={`./images/player/${img}`} alt="" />
+                {
+                    hasHttp ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" />
+                }
                 <div className='popupContent'>
                     <div className="popupLeft">
                         <p>{teamNameKor}<em>({teamNation})</em></p>

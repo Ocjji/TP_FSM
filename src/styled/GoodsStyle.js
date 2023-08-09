@@ -15,32 +15,20 @@ export const GoodsWrap = styled.div`
 `;
 
 export const GoodsPopupStyle = styled.div`
-    .addPopup{
-        width: 100%;
-        position: absolute;
-        left: 50%;
-        top: 48%;
-        transform:translateX(-50%);
-        text-align: center;
-        background-color: rgba(0,155,0,0.3);
-        h3{
-            color: tomato;
-            height: 200px;
-            line-height: 200px;
-            font-size: 40px;
-            font-weight: 700;
-        }
-    }
-    &.goodsPopup {
+    .popupBG{
         width: 100%;
         height: 100%;
+        background: rgba(0,0,0,0.5);
+        position: fixed;
+    }
+    &.goodsPopup {     
+        width: 100%;
+        height: 100%;   
         position: fixed;
         z-index:100;
-        /* position: absolute; */
-        background: rgba(0,0,0,0.5);
-        /* background: #eee; */
         .inner {
-            background: #fff;            
+            background: #fff;
+            padding-bottom: 0;         
         }
         .goodsDetail {
             width: 100%;

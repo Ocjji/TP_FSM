@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PlayerInfoCalStyle } from "../../styled/PlayGroundStyle";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import { onSquadReset } from '../../store/modules/playerInfoSlice';
 
 const PlayerInfoCal = () => {
     const { currentSetData, playerData } = useSelector(state => state.playerInfo);
@@ -12,6 +13,7 @@ const PlayerInfoCal = () => {
     let convertData = currentSetData.filter(item => item.backno !== null);
     convertData = convertData.map(item => playerData.find(player => player.backno === item.backno));
 
+    const dispatch = useDispatch();
     // console.log(convertData);
 
     const playerNum = convertData.length;
@@ -32,15 +34,22 @@ const PlayerInfoCal = () => {
         <PlayerInfoCalStyle>
             <div className="playerInfoCalculator">
                 <div className="cal-wrap">
-                    <p><strong>평균 신장</strong> <span>{avgHeight}</span></p>
-                    <p><strong>평균 몸무게</strong> <span>{avgWeight}</span></p>
-                    <p><strong>평균 나이</strong> <span>{avgAge}</span></p>
+                    <p><strong>평균 신장</strong> <span>{avgHeight} cm</span></p>
+                    <p><strong>평균 몸무게</strong> <span>{avgWeight} kg</span></p>
+                    <p><strong>평균 나이</strong> <span>{avgAge} 세</span></p>
                 </div>
+                {/* <div className='squad-info'>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                    <p><strong>무엇을 쓸까요</strong> <span>0</span></p>
+                </div> */}
                 <div className='personnel'>
                     <p><strong>선수 인원</strong><span>{playerNum}</span> / 11</p>
                 </div>
             </div>
             <p className='btnWrap'>
+                <button className="squadReset" onClick={() => dispatch(onSquadReset())}><Link to="">스쿼드 초기화</Link></button>
                 <button onClick={() => window.scrollTo({ top: 0 })}><Link to={'/notice/writing/squad'}>게시글 작성</Link></button>
             </p>
         </PlayerInfoCalStyle>

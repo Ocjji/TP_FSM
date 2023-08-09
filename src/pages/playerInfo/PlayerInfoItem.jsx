@@ -6,11 +6,14 @@ import { isSelectPlayer } from './../../store/modules/playerInfoSlice';
 const PlayerInfoItem = ({ item }) => {
     const { id, backno, img, name, birth, height, weight, teamNameKor, position } = item
     const dispatch = useDispatch()
-
+    const hasHttp = img.includes('http');
+    console.log(hasHttp);
     return (
         <li onClick={() => dispatch(isSelectPlayer(item))}>
             <div className='playerImg'>
-                <img src={`./images/player/${img}`} alt="" />
+                {
+                    hasHttp ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" />
+                }
             </div>
             <div className='playerBasic'>
                 <strong>{name}</strong>

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { goodsData } from "../../assets/api/goodsData";
 // console.log(goodsData);
 
+
 const initialState = {
     goodsData: goodsData,
     categoryData: [],
@@ -17,6 +18,8 @@ const initialState = {
     orderList: []
 };
 
+let cartNo = 1;
+
 export const goodsSlice = createSlice({
     name: "goods",
     initialState,
@@ -24,7 +27,6 @@ export const goodsSlice = createSlice({
         onGoodsPopup(state, action) {
             state.isGoodsPopup = true;
             state.popupData = goodsData.find(item => item.id === Number(action.payload));
-            // console.log(state.popupData);
         },
         offPopup(state, action) {
             state.isGoodsPopup = false;
@@ -36,7 +38,7 @@ export const goodsSlice = createSlice({
             state.currentCategory = action.payload;
             if (state.currentCategory === "all") { state.goodsListView = state.goodsData }
             else {
-                state.goodsListView = state.goodsData.filter(item => item.category1 === state.currentCategory);
+                state.goodsListView = state.goodsData.filter(item => item.category2 === state.currentCategory);
             }
             // state.sortOption = "recent";
             switch (state.sortOption) {
@@ -70,12 +72,17 @@ export const goodsSlice = createSlice({
         onAddCart(state, action) {
             const confirmDelData = confirm(`장바구니에 담으시겠습니까?`)
             if (confirmDelData) {
-                state.cart = [...state.cart, action.payload];
+                state.cart = [...state.cart, { ...action.payload, id: cartNo++ }];
                 state.isGoodsPopup = false;
                 alert("담겼습니다.")
             }
             else alert("취소되었습니다.")
             console.log(state.cart);
+            localStorage.setItem('cart', JSON.stringify(state.cart))
+        },
+        onAddGoCart(state, action) {
+            state.cart = [...state.cart, { ...action.payload, id: cartNo++ }];
+            state.isGoodsPopup = false;
             localStorage.setItem('cart', JSON.stringify(state.cart))
         },
         changeAmount(state, action) {
@@ -99,5 +106,5 @@ export const goodsSlice = createSlice({
     }
 })
 
-export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort, onAddCart, changeAmount, onDelCartSelectedItem, onDelCartAllItem, changeOrderList } = goodsSlice.actions;
+export const { onGoodsPopup, offPopup, setGoodsPage, setGoodsListView, listSort, onAddCart, changeAmount, onDelCartSelectedItem, onDelCartAllItem, changeOrderList, onAddGoCart } = goodsSlice.actions;
 export default goodsSlice.reducer;

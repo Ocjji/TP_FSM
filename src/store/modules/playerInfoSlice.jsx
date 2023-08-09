@@ -129,6 +129,34 @@ export const playerInfoSlice = createSlice({
         },
         offPopupPlayerList(state, action) {
             state.selectPosition = null;
+        },
+        onListSearch(state, action) {
+            if (!action.payload) {
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+            } else {
+                state.selectPositionViewData = state.playerData.filter(item => item.position === state.selectPositionView);
+                state.selectPositionViewData = state.playerData.filter(item => item.name.includes(action.payload));
+            }
+        },
+        onSquadReset(state, action) {
+            const confirmReset = confirm(`스쿼드를 초기화 하시겠습니까?`);
+            if (confirmReset) {
+                state.currentSetData = [
+                    { id: 1, backno: null, positionNo: "form334LW", position: "FW" },
+                    { id: 2, backno: null, positionNo: "form334ST", position: "FW" },
+                    { id: 3, backno: null, positionNo: "form334RW", position: "FW" },
+                    { id: 4, backno: null, positionNo: "form334LCM", position: "MF" },
+                    { id: 5, backno: null, positionNo: "form334CM", position: "MF" },
+                    { id: 6, backno: null, positionNo: "form334RCM", position: "MF" },
+                    { id: 7, backno: null, positionNo: "form334LB", position: "DF" },
+                    { id: 8, backno: null, positionNo: "form334LCB", position: "DF" },
+                    { id: 9, backno: null, positionNo: "form334RCB", position: "DF" },
+                    { id: 10, backno: null, positionNo: "form334RB", position: "DF" },
+                    { id: 11, backno: null, positionNo: "formGK", position: "GK" },
+                ];
+            } else {
+                return
+            }
         }
     },
     extraReducers: (builder) => {
@@ -149,5 +177,5 @@ export const playerInfoSlice = createSlice({
     }
 })
 
-export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList } = playerInfoSlice.actions
+export const { onAdd, onDel, onSearch, onEdit, isSelectPlayer, onSelectPosition, onAddPosition, onViewPlayerDetail, offPopupPlayerList, onListSearch, onSquadReset } = playerInfoSlice.actions
 export default playerInfoSlice.reducer
