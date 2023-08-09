@@ -9,10 +9,13 @@ const PlayerPosition = ({ item }) => {
     const pickPlayer = playerData.find(item => item.backno === backno);
     const { name, position, img } = pickPlayer;
     const dispatch = useDispatch();
-
+    const hasHttp = img.includes('http');
+    console.log(hasHttp);
     return (
         <PlayPositionStyle className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))}>
-            <img src={`./images/player/${img}`} alt="" className="imgHover" />
+            {
+                hasHttp ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" className="imgHover" />
+            }
             <p>
                 <span> No. {backno} </span>
                 <strong> {name} </strong>
