@@ -7,10 +7,12 @@ const PlayerPositionOnBoard = ({ item }) => {
     const { playerData, selectPosition, loading } = useSelector(state => state.playerInfo);
     const pickPlayer = playerData.find(item => item.backno === backno);
     const { name, position, img } = pickPlayer;
-
+    const hasHttp = img.includes('http');
     return (
         <PlayPositionStyle className={`${item.positionNo} onBoard`} >
-            <img src={`./images/player/${img}`} alt="" />
+            {
+                hasHttp ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" className="imgHover" />
+            }
             <p>
                 <span> No. {backno} </span>
                 <strong> {name} </strong>
