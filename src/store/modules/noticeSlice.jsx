@@ -8,7 +8,7 @@ const initialState = {
     my_squadData: [],
     free_boardData: [],
     editData: [],
-    noticeSquadData : noticeSquadData
+    noticeSquadData: noticeSquadData
 }
 let no = 11
 export const noticeSlice = createSlice({

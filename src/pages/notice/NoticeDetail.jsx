@@ -40,11 +40,11 @@ const NoticeDetail = () => {
                             <td className='th'>조회수</td>
                             <td>{view}</td>
                         </tr>
-                        {squad &&                         
+                        {squad &&
                             <tr>
                                 <td colSpan={4}>
                                     {/* 스쿼드메이커 불러오기 */}
-                                    {squad && <SquadOnBoard squad={squad}/>}
+                                    {squad && <SquadOnBoard squad={squad} />}
                                 </td>
                             </tr>
                         }
