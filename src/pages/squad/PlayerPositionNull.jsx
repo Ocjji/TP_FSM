@@ -8,7 +8,7 @@ const PlayerPositionNull = ({ item }) => {
     return (
         <div>
             <PlayPositionStyle style={{ paddingTop: "20px" }} className={item.positionNo} onClick={() => dispatch(onSelectPosition(item))} >
-                <img src="../images/Squad/emptyPlayer.png" alt="" className="imgHover" />
+                <img src="./images/Squad/emptyPlayer.png" alt="" className="imgHover" />
                 <p>
                     <span> </span>
                     <strong>  </strong>

@@ -8,7 +8,7 @@ const PlayerPositionNullOnBoard = ({ item }) => {
     return (
         <div>
             <PlayPositionStyle style={{ paddingTop: "20px" }} className={`${item.positionNo} onBoard`} >
-                <img src="../../images/Squad/emptyPlayer.png" alt="" />
+                <img src="./images/Squad/emptyPlayer.png" alt="" />
                 <p>
                     <span> </span>
                     <strong>  </strong>
