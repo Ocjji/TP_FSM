@@ -5,7 +5,7 @@ import { bg } from './HomeStyled';
 export const GoodsWrap = styled.div`
     h2{
         ${bg}
-        background-image: url('../../public/images/visual/playstore.png');
+        background-image: url('./images/visual/playstore.png');
         height: 500px;
     }
     .inner{

@@ -15,7 +15,7 @@ export const PlayerInfoWrap = styled.div`
     h2{
         ${h2}
         ${bg}
-        background-image: url('../../public/images/visual/visual2.jpg');
+        background-image: url('./images/visual/visual2.jpg');
         background-position: 0px -100px;
         padding-top: 180px;
         text-shadow: 0px 0px 10px #000;

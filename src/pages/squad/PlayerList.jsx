@@ -58,9 +58,11 @@ const PlayerList = () => {
                             <div className='imgWrap'>
                                 {
                                     img ?
-                                        <img src={`./images/player/${img}`} alt={name} />
+                                        (
+                                            img.includes('http') ? <img src={img} alt="" /> : <img src={`./images/player/${img}`} alt="" className="imgHover" />
+                                        )
                                         :
-                                        <img src="./images/Squad/emptyPlayer.png" alt="정보없음" className='imgNone' />
+                                        < img src="./images/Squad/emptyPlayer.png" alt="정보없음" className='imgNone' />
                                 }
 
                             </div>

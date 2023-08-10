@@ -20,10 +20,10 @@ const PlayerInfoCal = () => {
     useEffect(() => {
         if (playerNum !== 0) {
             setHeight((convertData.reduce((acc, cur) =>
-                acc + cur.height, 0) / playerNum).toFixed(0));
+                acc + Number(cur.height), 0) / playerNum).toFixed(0));
 
             setWeight((convertData.reduce((acc, cur) =>
-                acc + cur.weight, 0) / playerNum).toFixed(0));
+                acc + Number(cur.weight), 0) / playerNum).toFixed(0));
 
             setAge((convertData.reduce((acc, cur) =>
                 acc + Number(2023 - cur.birth.substr(0, 4) + 1), 0) / playerNum).toFixed(0));
