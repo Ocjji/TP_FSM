@@ -7,7 +7,7 @@ export const GameScheduleWrap = styled.div`
         ${h2}
         ${bg}
         background-position: center;
-        background-image: url('../../public/images/visual/notice.png');
+        background-image: url('./images/visual/notice.png');
     }
     .inner{
         ${inner}

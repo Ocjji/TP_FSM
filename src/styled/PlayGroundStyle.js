@@ -8,7 +8,7 @@ export const SquadWrap = styled.div`
         ${h2}
         ${bg}
         background-position: 0 -80px;
-        background-image: url('../../public/images/visual/visual4.jpg');
+        background-image: url('./images/visual/visual4.jpg');
         padding-top:200px;
     }
     .inner{
@@ -92,7 +92,7 @@ export const PlayGroundStyle = styled.div`
     width: 920px;
     height: 785px;
     /* border: 1px solid #000; */
-    background-image: url("../../public/images/Squad/fieldBG_920_785.png");
+    background-image: url("./images/Squad/fieldBG_920_785.png");
     position: relative;
 `;
 export const PlayPositionStyle = styled.div`
